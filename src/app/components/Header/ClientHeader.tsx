@@ -33,11 +33,11 @@ const ClientHeader = ({ initialNavigation }: ClientHeaderProps) => {
   return (
     <>
       <header
-        className={` sticky top-0 w-full flex items-center z-10 ${
+        className={`bg-offWhite sticky top-0 w-full flex items-center z-10 ${
           styles.header
         } ${!isHydrated ? styles.preHydration : ""}`}
       >
-        <div className="container mx-auto py-4 flex items-center relative justify-between">
+        <div className="w-full px-12 py-5 flex items-center relative justify-between">
           {/* Logo on the left */}
           <Link href="/" className="flex items-center gap-2 group">
             <span className="relative w-[146px] h-[58px] block">
