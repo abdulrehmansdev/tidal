@@ -1,10 +1,9 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  
-  // disable dark mode for now. 
+  // disable dark mode for now.
   darkMode: "class",
-  
+
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx,scss}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx,scss}",
@@ -12,9 +11,7 @@ export default {
   ],
   theme: {
     extend: {
-      
       colors: {
-        
         // 'green': {
 
         //   DEFAULT: '#74F4BB',
@@ -30,7 +27,7 @@ export default {
         //   900: '#0D8D54',
         //   950: '#096441'
         // },
-          
+
         // 'gray':{
         //   0: '#F0EFF2'
         // },
@@ -38,7 +35,7 @@ export default {
         // 'purple':{
         //   0: '#3F2A8C'
         // },
-        
+
         // 'light':{
         //   0: '#F7FCFF'
         // },
@@ -53,26 +50,26 @@ export default {
         //   200: '#AFFFED',
         // },
 
-        'dark-gray':'#495867',
-        'darkest-blue':'#1C4062',
-        'pale-blue':'#BDD5EA',
-        'blue-green':'#328392',
-        'offWhite':'#F7F7FF',
-        'reddish-orange':'#FE5F55',
+        "dark-gray": "#495867",
+        "dark-blue": "#1C4062",
+        "darkest-blue": "#001F3B",
+        "pale-blue": "#BDD5EA",
+        "blue-green": "#328392",
+        offWhite: "#F7F7FF",
+        "reddish-orange": "#FE5F55",
 
-        'black': '#000000',
-        'white': '#FFFFFF',
-        'button': {
-          primary: '#136CA3',
-          secondary: '#FFFFFF',
-          tertiary: '#136CA3',
+        black: "#000000",
+        white: "#FFFFFF",
+        button: {
+          primary: "#136CA3",
+          secondary: "#FFFFFF",
+          tertiary: "#136CA3",
         },
-        'primary-text': '#0d1c2a',
-        'link-blue': '#136ca3',
+        "primary-text": "#0d1c2a",
+        "link-blue": "#136ca3",
 
-        'background': "var(--background)",
-        'foreground': "var(--foreground)",
-
+        background: "var(--background)",
+        foreground: "var(--foreground)",
 
         // Required tremor color customization
         // tremor: {
@@ -106,17 +103,17 @@ export default {
         // },
       },
       fontFamily: {
-        montserrat: ['Montserrat', 'sans-serif'],
+        montserrat: ["Montserrat", "sans-serif"],
       },
       container: {
         center: true,
-        padding: '1rem',
+        padding: "1rem",
         screens: {
-          sm: '640px',
-          md: '768px',
-          lg: '1024px',
-          xl: '1280px',
-          '2xl':'1536px'
+          sm: "640px",
+          md: "768px",
+          lg: "1024px",
+          xl: "1280px",
+          "2xl": "1536px",
         },
       },
     },
