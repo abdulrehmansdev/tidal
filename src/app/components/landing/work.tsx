@@ -45,21 +45,16 @@ const WorkShowcase = () => {
   const topWorks = workData.slice(0, 5);
 
   return (
-    <div className="container-standard">
+    <div className="container py-24">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
-        <h2 className="text-ourWork text-primary">Our Work</h2>
-        <FilledButton
-          text="View More Work"
-          className="w-[210px]"
-          ariaLabel="View More Work"
-        />
-        {/* <button
-            className="w-[200px] font-semibold h-[44px] text-sm bg-[#FE5F55] hover:bg-[#d84037] hover:text-white hover:border-[#d84037] transition-all duration-300 text-white px-6 py-3 rounded-full uppercase tracking-wider cursor-pointer"
-            aria-label="View More Work"
-          >
+        <h2 className="text-56 text-dark-blue">Our Work</h2>
+        <div className="h-full flex items-end">
+          {" "}
+          <button className="btn-secondary" aria-label="View All Work">
             View More Work
-          </button> */}
+          </button>
+        </div>
       </div>
 
       {/* Custom Grid */}
@@ -76,7 +71,7 @@ const WorkShowcase = () => {
                 alt={item.title}
                 width={400}
                 height={300}
-                className="rounded-xl object-cover w-full h-auto transition-all duration-300 group-hover:scale-105"
+                className="rounded-xl object-cover w-full h-[200px] sm:h-[250px] lg:h-auto transition-all duration-300 group-hover:scale-105"
               />
 
               {/* Dark overlay on hover */}
@@ -98,8 +93,8 @@ const WorkShowcase = () => {
                 aria-hidden="true"
               />
               <div className="group-hover:pl-1 transition-all duration-500">
-                <h3 className="text-primary text-capstone ">{item.title}</h3>
-                <p className=" text-secondary text-voluntary">
+                <h3 className="text-22 text-dark-blue ">{item.title}</h3>
+                <p className=" text-base text-teal font-normal leading-tight tracking-tight">
                   {item.category}
                 </p>
               </div>
@@ -119,7 +114,7 @@ const WorkShowcase = () => {
                 alt={item.title}
                 width={400}
                 height={300}
-                className="rounded-xl object-cover w-full h-auto transition-all duration-300 group-hover:scale-105"
+                className="rounded-xl object-cover w-full h-[200px] sm:h-[250px] lg:h-auto transition-all duration-300 group-hover:scale-105"
               />
 
               {/* Dark overlay on hover */}
@@ -141,8 +136,10 @@ const WorkShowcase = () => {
                 aria-hidden="true"
               />
               <div className="group-hover:pl-1 transition-all duration-500">
-                <h3 className="text-primary text-capstone">{item.title}</h3>
-                <p className="text-secondary text-voluntary">{item.category}</p>
+                <h3 className="text-22 text-dark-blue ">{item.title}</h3>
+                <p className=" text-base text-teal font-normal leading-tight tracking-tight">
+                  {item.category}
+                </p>
               </div>
             </div>
           </div>

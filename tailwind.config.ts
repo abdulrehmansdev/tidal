@@ -49,16 +49,16 @@ export default {
         //   100: '#e6fff9',
         //   200: '#AFFFED',
         // },
-
         "dark-gray": "#495867",
         "dark-blue": "#1C4062",
         "darker-blue": "#1C364F",
+        teal: "#287F8C",
         "darkest-blue": "#001F3B",
         "pale-blue": "#BDD5EA",
         "blue-green": "#328392",
         offWhite: "#F7F7FF",
         "reddish-orange": "#FE5F55",
-        "reddish-dark":"#b8463e",
+        "reddish-dark": "#b8463e",
 
         black: "#000000",
         white: "#FFFFFF",
@@ -105,7 +105,7 @@ export default {
         // },
       },
       fontFamily: {
-        montserrat: ["Montserrat","Jost", "sans-serif"],
+        montserrat: ["Montserrat", "Jost", "sans-serif"],
       },
       fontSize: {
         "1.5xl": "22px",
@@ -130,10 +130,10 @@ export default {
         },
       },
       borderRadius: {
-        '26': '26px',
+        "26": "26px",
       },
       borderWidth: {
-        '1.5': '1.5px',
+        "1.5": "1.5px",
       },
     },
   },
