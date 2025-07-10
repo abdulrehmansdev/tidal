@@ -37,6 +37,7 @@
     "@reduxjs/toolkit": "^2.3.0",
     "@remixicon/react": "^4.5.0",
     "@square/web-sdk": "latest",
+    "@tanstack/react-query": "^5.82.0",
     "@types/axios": "^0.9.36",
     "@types/js-cookie": "^3.0.6",
     "axios": "^1.7.7",

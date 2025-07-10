@@ -6,69 +6,29 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./ClientHeader.module.scss";
 import { NavItem } from "@/app/services/navigationService";
-import { SocialIcon } from "@/app/lib/icons";
-
+import { useServices } from "../../services/tidalServicesApi";
 interface ClientHeaderProps {
   initialNavigation: NavItem[];
 }
 
 const ClientHeader = ({ initialNavigation }: ClientHeaderProps) => {
-  const pathname = usePathname();
   const [isHydrated, setIsHydrated] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(false);
-  const [activeSubmenu, setActiveSubmenu] = useState<NavItem[]>([]);
-  const [isMobile, setIsMobile] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const servicesDropdownTimeout = React.useRef<NodeJS.Timeout | null>(null);
+  const pathname = usePathname();
+  const { data: services, isLoading, error } = useServices();
 
-  const showCta =
-    !pathname.startsWith("/checkout") && !pathname.startsWith("/search");
-
+  const navLinks = [
+    { label: "Work", href: "/work" },
+    { label: "Services", href: "/services" },
+    { label: "About", href: "/about" },
+    { label: "News", href: "/news" },
+  ];
   // Memoize navigation with active states
-  const navigationWithActive = initialNavigation.map((item) => ({
-    ...item,
-    active:
-      item.href === pathname ||
-      (pathname?.startsWith(item.href) && item.href !== "/"),
-  }));
-
-  // Memoize handlers
-  const handleSubmenuClick = useCallback((submenu: NavItem[] | undefined) => {
-    if (submenu) {
-      setActiveSubmenu(submenu);
-      setMobileSubmenuOpen(true);
-    }
-  }, []);
-
-  const handleCloseMobileMenu = useCallback(() => {
-    setMobileMenuOpen(false);
-    setMobileSubmenuOpen(false);
-  }, []);
 
   // Handle body class and hydration in one effect
-  useEffect(() => {
-    setIsHydrated(true);
-    const className = styles.mobileOverlayMenuActive;
-
-    // Check window width and set isMobile
-    setIsMobile(window.innerWidth <= 500);
-
-    // Add event listener for window resize
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 500);
-    };
-    window.addEventListener("resize", handleResize);
-
-    if (mobileMenuOpen || mobileSubmenuOpen) {
-      document.body.classList.add(className);
-    } else {
-      document.body.classList.remove(className);
-    }
-
-    return () => {
-      document.body.classList.remove(className);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [mobileMenuOpen, mobileSubmenuOpen]);
 
   return (
     <>
@@ -77,7 +37,7 @@ const ClientHeader = ({ initialNavigation }: ClientHeaderProps) => {
           styles.header
         } ${!isHydrated ? styles.preHydration : ""}`}
       >
-        <div className="container mx-auto py-4 flex items-center relative">
+        <div className="container mx-auto py-4 flex items-center relative justify-between">
           {/* Logo on the left */}
           <Link href="/" className="flex items-center gap-2 group">
             <span className="relative w-[50px] h-[50px] block">
@@ -90,7 +50,7 @@ const ClientHeader = ({ initialNavigation }: ClientHeaderProps) => {
                 priority
               />
               <Image
-                src="/puclic2/color-logo.svg"
+                src="/public2/color-logo.svg"
                 alt="Tidal Film Color Logo"
                 width={50}
                 height={50}
@@ -109,95 +69,156 @@ const ClientHeader = ({ initialNavigation }: ClientHeaderProps) => {
           </Link>
 
           {/* Desktop Navigation - Centered when CTA is shown, right-aligned when CTA is hidden */}
-          <nav
-            className={`hidden lg:flex items-center lg:space-x-7 ${
-              showCta
-                ? "absolute left-1/2 transform -translate-x-1/2"
-                : "ml-auto"
-            }`}
-          >
-            {navigationWithActive
-              .filter((x) => x.showHeader)
-              .map((item) => (
-                <div key={item.href} className="relative group">
-                  {item.submenu && item.submenu.length > 0 ? (
-                    <div className="relative group">
-                      <Link
-                        href={item.href}
-                        className={`no-underline uppercase text-darkest-blue font-bold text-base leading-none tracking-widest ${
-                          item.active ? styles.active : ""
-                        }`}
-                      >
-                        {item.text}
-                      </Link>
-                      <div className="hidden group-hover:block absolute bg-offWhite shadow-lg rounded-xl w-max">
-                        {item.submenu.map((subItem) => (
-                          <Link
-                            key={subItem.href}
-                            href={subItem.href}
-                            className="block py-3 px-4 text-dark no-underline hover:bg-gray hover:rounded-none first:hover:rounded-t-xl last:hover:rounded-b-xl"
-                          >
-                            {subItem.text}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  ) : (
+          <nav className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => {
+              const isActive =
+                pathname === link.href ||
+                (link.href !== "/" && pathname.startsWith(link.href));
+              if (link.label === "Services") {
+                return (
+                  <div
+                    key={link.label}
+                    className="flex flex-col items-center relative"
+                    onMouseEnter={() => {
+                      if (servicesDropdownTimeout.current) {
+                        clearTimeout(servicesDropdownTimeout.current);
+                      }
+                      setServicesDropdownOpen(true);
+                      setHoveredLink(link.label);
+                    }}
+                    onMouseLeave={() => {
+                      servicesDropdownTimeout.current = setTimeout(() => {
+                        setServicesDropdownOpen(false);
+                      }, 120); // 120ms delay
+                      setHoveredLink(null);
+                    }}
+                  >
                     <Link
-                      href={item.href}
-                      className={`no-underline uppercase text-darkest-blue font-bold text-base leading-none tracking-widest hover:border-b-[3px] hover:border-green ${
-                        item.active
-                          ? ` border-b-[3px] border-green ${styles.active}`
-                          : ""
-                      }`}
+                      href={link.href}
+                      className="text-primary font-semibold text-22"
                     >
-                      {item.text}
+                      {link.label}
                     </Link>
-                  )}
+                    <span
+                      className={`block h-1 rounded-full w-full
+                      ${
+                        isActive || hoveredLink === link.label
+                          ? "bg-[#FE5F55] scale-100 opacity-100"
+                          : "bg-transparent scale-75 opacity-0"
+                      }
+                    `}
+                    />
+                    {/* Dropdown menu */}
+                    {servicesDropdownOpen && (
+                      <div
+                        className="absolute left-1/2 -translate-x-1/2 top-full mt-1 z-30 bg-offWhite rounded-xl shadow-xl p-4 min-w-[420px] max-w-[620px] w-max flex flex-col"
+                        style={{ boxShadow: "0 8px 32px rgba(0,0,0,0.10)" }}
+                      >
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 text-base font-semibold text-[#1C364F] min-w-[340px]">
+                          {isLoading && <div>Loading...</div>}
+                          {error && (
+                            <div className="text-[#FE5F55] col-span-2">
+                              {typeof error === "string"
+                                ? error
+                                : "An error occurred while loading services."}
+                            </div>
+                          )}
+                          {!isLoading &&
+                            !error &&
+                            (!services || services.length === 0) && (
+                              <div className="text-[#FE5F55] col-span-2">
+                                No services found.
+                              </div>
+                            )}
+                          {services &&
+                            services.map((service) => (
+                              <Link
+                                key={service.id}
+                                href={`/services/${service.id}`}
+                                className="relative group px-2 py-2 rounded transition-colors whitespace-nowrap flex items-center"
+                                onClick={() => setServicesDropdownOpen(false)}
+                              >
+                                {/* Animated orange line for all items, animated on hover */}
+                                <span
+                                  className="absolute left-0 top-1/2 -translate-y-1/2 h-9 w-1 rounded bg-[#FE5F55] opacity-0 group-hover:opacity-100 transition-all duration-300"
+                                  aria-hidden="true"
+                                />
+                                <span className="group-hover:pl-1 text-22 text-primary font-semibold transition-all duration-300">
+                                  {service.title}
+                                </span>
+                              </Link>
+                            ))}
+                          {/* View All Services as a grid item */}
+                          <Link
+                            href="/services"
+                            className="relative group px-2 py-2 rounded transition-colors whitespace-nowrap flex items-center col-span-1 sm:col-span-2"
+                            onClick={() => setServicesDropdownOpen(false)}
+                          >
+                            <span
+                              className="absolute left-0 top-1/2 -translate-y-1/2 h-6 w-1 rounded bg-[#FE5F55] opacity-0 group-hover:opacity-100 transition-all duration-500"
+                              aria-hidden="true"
+                            />
+                            <span className="group-hover:pl-2 text-22 font-semibold text-primary transition-all duration-500">
+                              View All Services
+                            </span>
+                          </Link>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              }
+              return (
+                <div
+                  key={link.label}
+                  className="flex flex-col items-center"
+                  onMouseEnter={() => setHoveredLink(link.label)}
+                  onMouseLeave={() => setHoveredLink(null)}
+                >
+                  <Link
+                    href={link.href}
+                    className={`text-primary font-semibold text-22`}
+                  >
+                    {link.label}
+                  </Link>
+                  <span
+                    className={`block h-1 rounded-full w-full 
+                    ${
+                      isActive || hoveredLink === link.label
+                        ? "bg-[#FE5F55] scale-100 opacity-100"
+                        : "bg-transparent scale-75 opacity-0"
+                    }
+                  `}
+                  />
                 </div>
-              ))}
+              );
+            })}
+            <Link
+              href="/contact"
+              className={`border border-primary !font-jost px-4 py-2 rounded-full text-sm font-semibold tracking-wide transition
+              ${
+                pathname === "/contact"
+                  ? "bg-[#FE5F55] text-white border-[#FE5F55] hover:bg-[#ff2e3a] hover:border-[#ff2e3a]"
+                  : "text-[#1C364F] hover:bg-[#d84037] hover:border-[#d84037]  hover:text-white"
+              }
+            `}
+            >
+              GET IN TOUCH
+            </Link>
           </nav>
 
           {/* Book Now and Mobile Menu Toggle - aligned to the right */}
-          <div
-            className={`flex items-center space-x-1 ml-auto ${
-              showCta ? "ml-auto" : "lg:hidden"
-            }`}
-          >
-            {/* {showCta && (
-                            <button
-                                className="mx-2 lg:mx-0"
-                                onClick={() => {
-                                    // This button is now handled by CtaButtonTriggerDialog directly
-                                    // No direct action needed here for now, as CtaButtonTriggerDialog manages its own state
-                                }}
-                            >
-                                Book<span className="hidden md:inline">&nbsp;Now</span>
-                            </button>
-                        )} */}
-
+          <div className="lg:hidden">
             <button
-              className="lg:hidden p-[10px] border rounded-full bg-white hover:bg-gray"
-              onClick={() => setMobileMenuOpen(true)}
               aria-label="Open menu"
-              aria-expanded={mobileMenuOpen}
-              aria-controls="mobile-main-menu"
-              role="button"
+              onClick={() => setMenuOpen(true)}
+              className="focus:outline-none"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+              {/* Hamburger icon */}
+              <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
+                <rect y="5" width="24" height="2" rx="1" fill="#1C364F" />
+                <rect y="11" width="24" height="2" rx="1" fill="#1C364F" />
+                <rect y="17" width="24" height="2" rx="1" fill="#1C364F" />
               </svg>
             </button>
           </div>
@@ -205,200 +226,69 @@ const ClientHeader = ({ initialNavigation }: ClientHeaderProps) => {
       </header>
 
       {/* Mobile Menus - Only render when hydrated */}
-      {isHydrated && (
-        <>
-          {/* Mobile Submenu */}
+      {menuOpen && (
+        <div className="fixed inset-0 z-40">
+          {/* Overlay */}
           <div
-            id="mobile-submenu"
-            className={`fixed inset-y-0 right-0 w-[90%] max-w-md bg-white transform transition-transform duration-300 ease-in-out lg:hidden z-30 ${
-              mobileSubmenuOpen ? "translate-x-0" : "translate-x-full"
-            }`}
-          >
-            <div className="flex flex-col h-full">
-              <div className="p-4 flex justify-between items-center border-b">
-                <button
-                  className="p-2"
-                  onClick={() => setMobileSubmenuOpen(false)}
-                  aria-label="Back to main menu"
+            className="absolute inset-0 bg-black opacity-30"
+            onClick={() => setMenuOpen(false)}
+          />
+          {/* Slide-in menu */}
+          <div className="absolute top-0 right-0 h-full w-64 bg-[#F7F7FF] shadow-lg z-50 flex flex-col p-6 animate-slide-in">
+            <button
+              aria-label="Close menu"
+              onClick={() => setMenuOpen(false)}
+              className="self-end mb-6 focus:outline-none"
+            >
+              {/* Close icon */}
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <line
+                  x1="6"
+                  y1="6"
+                  x2="18"
+                  y2="18"
+                  stroke="#1C364F"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+                <line
+                  x1="18"
+                  y1="6"
+                  x2="6"
+                  y2="18"
+                  stroke="#1C364F"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </button>
+            <nav className="flex flex-col gap-6">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="text-[#1C364F] font-semibold text-lg hover:opacity-80"
+                  onClick={() => setMenuOpen(false)}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M15 19l-7-7 7-7"
-                    />
-                  </svg>
-                </button>
-                <button
-                  className="p-2"
-                  onClick={handleCloseMobileMenu}
-                  aria-label="Close menu"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div className="flex-1 overflow-y-auto">
-                {activeSubmenu.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="block text-dark px-4 py-3 border-b hover:bg-gray-50 no-underline"
-                    onClick={handleCloseMobileMenu}
-                  >
-                    {item.text}
-                  </Link>
-                ))}
-              </div>
-            </div>
+                  {link.label}
+                </Link>
+              ))}
+              <Link
+                href="#"
+                className={`border border-primary !font-jost text-center px-4 py-2 rounded-full text-sm font-semibold tracking-wide transition
+                    ${
+                      pathname === "/contact"
+                        ? "bg-[#FE5F55] text-white border-[#FE5F55] hover:bg-[#ff2e3a] hover:border-[#ff2e3a]"
+                        : "text-[#1C364F] hover:bg-[#d84037] hover:border-[#d84037]  hover:text-white"
+                    }
+                  `}
+                onClick={() => setMenuOpen(false)}
+              >
+                GET IN TOUCH
+              </Link>
+            </nav>
           </div>
-
-          {/* Main Mobile Menu */}
-          <div
-            id="mobile-main-menu"
-            className={`fixed inset-y-0 right-0 w-[90%] max-w-md bg-white transform transition-transform duration-300 ease-in-out lg:hidden z-20 ${
-              mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-            }`}
-          >
-            <div className="flex flex-col h-full">
-              <div className="p-4 flex justify-between items-center border-b">
-                {/* {showCta && (
-                                    <button
-                                        className=""
-                                        onClick={() => {
-                                            // This button is now handled by CtaButtonTriggerDialog directly
-                                            // No direct action needed here for now, as CtaButtonTriggerDialog manages its own state
-                                        }}
-                                    >
-                                        Book Now
-                                    </button>
-                                )} */}
-
-                <button
-                  className="p-2 ml-auto"
-                  onClick={handleCloseMobileMenu}
-                  aria-label="Close menu"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
-              </div>
-
-              <nav className="flex-1 overflow-y-auto p-0 lg:p-4">
-                {navigationWithActive.map((item) => (
-                  <div key={item.href}>
-                    {item.submenu && item.submenu.length > 0 ? (
-                      <button
-                        onClick={() => handleSubmenuClick(item.submenu)}
-                        className="w-full text-dark flex items-center justify-between px-4 py-3 border-b hover:bg-gray-50 no-underline"
-                        aria-expanded={mobileSubmenuOpen}
-                        aria-controls="mobile-submenu"
-                      >
-                        {item.text}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-5 w-5"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          aria-hidden="true"
-                        >
-                          <path d="M9 18l6-6-6-6" />
-                        </svg>
-                      </button>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className="block text-dark px-4 py-3 border-b hover:bg-gray-50 no-underline"
-                        onClick={handleCloseMobileMenu}
-                      >
-                        {item.text}
-                      </Link>
-                    )}
-                  </div>
-                ))}
-              </nav>
-
-              {/* Footer Section */}
-              {/* <div className="p-4 border-t">
-                                <div className="mb-4">
-                                    <div className="flex space-x-4">
-                                        <a
-                                            href={process.env.NEXT_PUBLIC_WHATSAPP_URL || '#'}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="WhatsApp"
-                                            className="text-gray-600 hover:text-gray-900"
-                                        >
-                                            <SocialIcon type="whatsapp" />
-                                        </a>
-                                        <a
-                                            href={process.env.NEXT_PUBLIC_TRIPADVISOR_PAGE_URL || '#'}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            aria-label="TripAdvisor"
-                                            className="text-gray-600 hover:text-gray-900"
-                                        >
-                                            <SocialIcon type="tripadvisor" />
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div className="text-sm text-gray-600">
-                                    <ul className="flex flex-wrap -mx-2">
-                                        <li className="px-2">
-                                            <Link href="/terms-and-conditions" className="hover:text-gray-900 text-dark no-underline hover:underline text-sm">
-                                                Terms and Conditions
-                                            </Link>
-                                        </li>
-                                        <li className="px-2">
-                                            <Link href="/privacy-and-cookie-policy" className="hover:text-gray-900 text-dark no-underline hover:underline text-sm">
-                                                Privacy Policy
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div> */}
-            </div>
-          </div>
-        </>
+        </div>
       )}
     </>
   );
