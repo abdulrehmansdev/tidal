@@ -15,7 +15,7 @@
 
 /* Move these styles to a separate non-module CSS file */
 body {
-  @apply text-dark;
+  /* @apply text-dark; */
   background: var(--background);
   font-family: Montserrat, sans-serif;
 }
@@ -27,48 +27,17 @@ a{
 @layer utilities {
   
   /* .bg-gray { @apply bg-gray-0; } */
-  .bg-purple {
+  /* .bg-purple {
     @apply bg-purple-0 text-light;
     
-  }
-  /* .bg-light{
-    @apply bg-light-0;
   } */
-  /* .bg-clear-blurred{
-    @apply bg-light-0/80 backdrop-blur-[4px];
-  } */
-
-  .bordered-box{
-    @apply rounded-3xl py-6 px-4 md:p-6 lg:p-10;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-  }
-
-  .bordered-box-light{
-    @apply bordered-box border border-gray-300;
-  }
   
-  .header-text{
-    @apply text-dark my-10 text-5xl lg:text-6xl;
-    
-  }
-  
-  .bg-primary { @apply bg-light-indigo-50; }
+  /* .bg-primary { @apply bg-light-indigo-50; }
   .bg-secondary { @apply bg-light-teal-200; }
   .bg-secondary-light { @apply bg-light-teal-100; }
   .bg-tertiary { @apply bg-light-indigo-700; }
-  .bg-quaternary { @apply bg-light-indigo-900; }
+  .bg-quaternary { @apply bg-light-indigo-900; } */
   
-  .text-dark{ letter-spacing: 0.1rem; color: #2B2B2B;  }
-  .text-light{ letter-spacing: 0.1rem; color: #F7FCFF;}
-  
-  .text-primary { @apply text-light-indigo-900; }
-  .text-secondary { @apply text-light-indigo-900; }
-  .text-tertiary { @apply text-light-indigo-50; }
-  .text-quaternary { @apply text-light-teal-200; }
-  .shadow-primary { @apply shadow-black; }
-  .shadow-secondary { @apply shadow-black; }
-  .shadow-tertiary { @apply shadow-white; }
-  .shadow-quaternary { @apply shadow-white; }
 }
 
 @layer base {
@@ -78,95 +47,20 @@ a{
 }
 
 @layer components {
-  a:hover {
-    @apply cursor-pointer;
-  }
+ 
   
-  .btn {
-    @apply h-12 flex items-center gap-0.5 px-4 no-underline;
-  }
-  
-  .btn-wrapper {
-    @apply inline-block p-0.5 -m-0.5 no-underline transition-all duration-200;
-  }
-  
-  .btn-primary {
+  /* .btn-primary {
     @apply px-3 lg:px-4 btn justify-center bg-white text-black border border-black rounded-full uppercase font-bold text-base relative;
     box-shadow: 3px 3px 0 0 transparent;
-  }
+  } */
   
-  .btn-wrapper:hover .btn-primary,
-  .btn-wrapper.active .btn-primary {
-    @apply cursor-pointer;
-    transform: translate(-3px, -3px);
-    box-shadow: 3px 3px 0 0 black;
-  }
-  
-  .btn-wrapper:hover:active .btn-primary {
-    transform: none;
-    box-shadow: 3px 3px 0 0 transparent;
-  }
-  
-  
-  
-  h1,h2,h3,h4,h5,h6 {
-    @apply leading-tight tracking-wider;
-  }
-  
-  h2{
-    font-size: 52px;
-  }
-  h3{
-    font-size: 43px;
-    font-weight: 700;
-    &.unset{
-     font-size: 16px;
-      font-weight: 400;
-    }
-  }
-
-  p.h3{
-    font-size: 43px;
-    font-weight: 700;
-    
-  }
-  h6{
-    font-size:26px;
-    font-weight:700;
-  }
-  
-  
-  ul{
-    @apply list-inside;
-  }
-  
-  
+/*   
   .btn-secondary {
     @apply btn justify-center border-2 border-button-secondary text-button-secondary transition-colors duration-300 ease-in-out;
   }
   .btn-secondary:hover {
     @apply bg-white bg-opacity-20 cursor-pointer;
-  }
+  } */
 
-  .btn-tertiary {
-    @apply btn justify-center border-2 border-button-tertiary text-button-tertiary transition-colors duration-300 ease-in-out;
-  }
-  .btn-tertiary:hover {
-    @apply bg-light-indigo-50 bg-opacity-25 cursor-pointer;
-  }
-
-  .btn-tertiary-black {
-    @apply btn justify-center border-2 border-black text-black;
-  }
-  .btn-tertiary-black:hover {
-    @apply bg-light-indigo-50 bg-opacity-50 cursor-pointer;
-  }
-
-  .btn-grey {
-    @apply btn justify-center bg-gray-300 text-gray-700 transition-colors duration-300 ease-in-out;
-  }
-  .btn-grey:hover {
-    @apply bg-light-indigo-50 cursor-pointer;
-  }
 }
 
