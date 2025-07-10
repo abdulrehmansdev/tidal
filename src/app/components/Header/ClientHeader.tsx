@@ -95,7 +95,7 @@ const ClientHeader = ({ initialNavigation }: ClientHeaderProps) => {
                   >
                     <Link
                       href={link.href}
-                      className="text-primary font-semibold text-22"
+                      className="font-montserrat text-darker-blue text-22"
                     >
                       {link.label}
                     </Link>
@@ -143,7 +143,7 @@ const ClientHeader = ({ initialNavigation }: ClientHeaderProps) => {
                                   className="absolute left-0 top-1/2 -translate-y-1/2 h-9 w-1 rounded bg-[#FE5F55] opacity-0 group-hover:opacity-100 transition-all duration-300"
                                   aria-hidden="true"
                                 />
-                                <span className="group-hover:pl-1 text-22 text-primary font-semibold transition-all duration-300">
+                                <span className="group-hover:pl-1 font-montserrat text-darker-blue text-22 transition-all duration-300">
                                   {service.title}
                                 </span>
                               </Link>
@@ -193,16 +193,7 @@ const ClientHeader = ({ initialNavigation }: ClientHeaderProps) => {
                 </div>
               );
             })}
-            <Link
-              href="/contact"
-              className={`border border-primary !font-jost px-4 py-2 rounded-full text-sm font-semibold tracking-wide transition
-              ${
-                pathname === "/contact"
-                  ? "bg-[#FE5F55] text-white border-[#FE5F55] hover:bg-[#ff2e3a] hover:border-[#ff2e3a]"
-                  : "text-[#1C364F] hover:bg-[#d84037] hover:border-[#d84037]  hover:text-white"
-              }
-            `}
-            >
+            <Link href="/contact" className="btn-primary font-jost ">
               GET IN TOUCH
             </Link>
           </nav>
