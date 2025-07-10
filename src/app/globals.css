@@ -19,11 +19,11 @@
 body {
   /* @apply text-dark; */
   background: var(--background);
-  font-family: Montserrat, sans-serif;
+  font-family: Montserrat, Jost,sans-serif;
 }
 
 a {
-  font-family: Montserrat, sans-serif;
+  font-family: Montserrat, Jost,sans-serif;
 }
 
 @layer utilities {
@@ -75,10 +75,15 @@ a {
     box-shadow: 3px 3px 0 0 transparent;
   } */
 
-  /*   
-  .btn-secondary {
-    @apply btn justify-center border-2 border-button-secondary text-button-secondary transition-colors duration-300 ease-in-out;
+    
+  .btn-primary {
+    @apply px-4 py-3 btn justify-center border-1.5 text-sm leading-6 border-dark-blue text-dark-blue hover:text-white hover:bg-reddish-orange hover:border-reddish-orange transition-colors duration-300 ease-in-out;
   }
+
+  .btn-secondary {
+    @apply px-3 py-4 btn justify-center border-1.5 text-sm leading-6 border-reddish-orange text-offWhite hover:bg-reddish-dark transition-colors duration-300 ease-in-out;
+  }
+  /* 
   .btn-secondary:hover {
     @apply bg-white bg-opacity-20 cursor-pointer;
   } */

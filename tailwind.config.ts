@@ -58,6 +58,7 @@ export default {
         "blue-green": "#328392",
         offWhite: "#F7F7FF",
         "reddish-orange": "#FE5F55",
+        "reddish-dark":"#b8463e",
 
         black: "#000000",
         white: "#FFFFFF",
@@ -104,7 +105,7 @@ export default {
         // },
       },
       fontFamily: {
-        montserrat: ["Montserrat", "sans-serif"],
+        montserrat: ["Montserrat","Jost", "sans-serif"],
       },
       fontSize: {
         "1.5xl": "22px",
@@ -127,6 +128,12 @@ export default {
           xl: "1280px",
           "2xl": "1536px",
         },
+      },
+      borderRadius: {
+        '26': '26px',
+      },
+      borderWidth: {
+        '1.5': '1.5px',
       },
     },
   },
