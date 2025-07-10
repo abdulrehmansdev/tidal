@@ -1,0 +1,42 @@
+# Node modules
+data/
+node_modules/
+
+# Build output
+.next/
+out/
+dist/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env files
+.env
+.env.*
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+*.log
+
+# Misc
+coverage/
+
+# Project specific
+obj/
+bookingsystem.frontend.esproj
+certificates/ 
