@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Keira",
+    "title": "Founder & Creative Director",
+    "description": "Keira supports productions by assisting across various stages to ensure the delivery of high-quality content, all while bringing boundless energy and attention to detail.",
+    "image": "about/team/kira.png",
+    "altImage": "about/team/kira-alt.png"
+  },
+  {
+    "id": 2,
+    "name": "Ben",
+    "title": "Founder & Creative Director",
+    "description": "Ben leads the team with creativity & strategic direction. As the founder, he plans projects and takes on producer duties, ensuring every...",
+    "image": "about/team/ben.png",
+    "altImage": "about/team/ben-alt.png"
+  },
+  {
+    "id": 3,
+    "name": "Gina",
+    "title": "Content Producer & In-House...",
+    "description": "Gina organises and oversees productions, managing projects from pre-production planning through to post-production editing...",
+    "image": "about/team/gina.png",
+    "altImage": "about/team/gina-alt.png"
+  },
+  {
+    "id": 4,
+    "name": "Emma",
+    "title": "Producer & Creative Assistant",
+    "description": "Emma brings fresh perspectives and creative insights to every project, supporting the team with innovative solutions and meticulous attention to detail.",
+    "image": "about/team/gina.png",
+    "altImage": "about/team/gina-alt.png"
+  },
+  {
+    "id": 5,
+    "name": "James",
+    "title": "Director of Photography",
+    "description": "James captures stunning visuals that bring stories to life, combining technical expertise with artistic vision to create compelling cinematography.",
+    "image": "about/team/kira.png",
+    "altImage": "about/team/kira-alt.png"
+  }
+]
