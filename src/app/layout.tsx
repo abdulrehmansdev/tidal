@@ -177,7 +177,7 @@ export default function RootLayout({
 
           {children}
 
-          <Footer />
+          {/* <Footer /> */}
         </CustomProviders>
       </body>
     </html>

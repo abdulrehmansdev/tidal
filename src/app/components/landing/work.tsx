@@ -49,9 +49,8 @@ const WorkShowcase = () => {
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
         <h2 className="text-56 text-dark-blue">Our Work</h2>
-        <div className="h-full flex items-end">
-          {" "}
-          <button className="btn-secondary" aria-label="View All Work">
+        <div className="hidden md:flex h-full items-end">
+          <button className="btn-secondary uppercase" aria-label="View All Work">
             View More Work
           </button>
         </div>
@@ -144,6 +143,12 @@ const WorkShowcase = () => {
             </div>
           </div>
         ))}
+      </div>
+      {/* Mobile-only View More Work button */}
+      <div className="flex md:hidden justify-center mt-8">
+        <button className="btn-secondary uppercase max-w-xs" aria-label="View All Work">
+          View More Work
+        </button>
       </div>
     </div>
   );
