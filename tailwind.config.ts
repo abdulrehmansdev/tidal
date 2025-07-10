@@ -105,6 +105,17 @@ export default {
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
       },
+      fontSize: {
+        '1.5xl': '22px',
+        '5.5xl':'56px',
+        '6.5xl':'64px',
+        "7.5xl":'76px',
+      },
+      lineHeight: {
+        '16': '64px',
+        '21':'86px',
+        '22':'88px'
+      },
       container: {
         center: true,
         padding: "1rem",
