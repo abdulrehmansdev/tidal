@@ -37,7 +37,7 @@ const ClientHeader = ({ initialNavigation }: ClientHeaderProps) => {
           styles.header
         } ${!isHydrated ? styles.preHydration : ""}`}
       >
-        <div className="w-full px-12 py-5 flex items-center relative justify-between">
+        <div className="w-full px-6 lg:px-12 py-5 flex items-center relative justify-between">
           {/* Logo on the left */}
           <Link href="/" className="flex items-center gap-2 group">
             <span className="relative w-[146px] h-[58px] block">

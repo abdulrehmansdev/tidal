@@ -34,7 +34,7 @@ a {
   } */
 
   .text-20 {
-    @apply text-xl font-normal leading-tight tracking-tights;
+    @apply text-xl font-normal leading-tight tracking-wide;
   }
 
   .text-22 {
