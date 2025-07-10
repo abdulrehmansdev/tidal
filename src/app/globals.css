@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -36,11 +38,11 @@ a {
   }
 
   .text-22 {
-    @apply text-1.5xl font-semibold leading-tight tracking-tight;
+    @apply text-1.5xl font-semibold leading-tight tracking-normal;
   }
 
-  .text-22 {
-    @apply text-1.5xl font-semibold leading-tight tracking-tight;
+  .text-24 {
+    @apply text-2xl font-semibold leading-tight tracking-tight;
   }
 
   .text-56 {

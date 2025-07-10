@@ -177,7 +177,7 @@ const ClientHeader = ({ initialNavigation }: ClientHeaderProps) => {
                 >
                   <Link
                     href={link.href}
-                    className={`text-primary font-semibold text-22`}
+                    className={`font-montserrat text-darker-blue text-22`}
                   >
                     {link.label}
                   </Link>

@@ -52,6 +52,7 @@ export default {
 
         "dark-gray": "#495867",
         "dark-blue": "#1C4062",
+        "darker-blue": "#1C364F",
         "darkest-blue": "#001F3B",
         "pale-blue": "#BDD5EA",
         "blue-green": "#328392",
@@ -106,15 +107,15 @@ export default {
         montserrat: ["Montserrat", "sans-serif"],
       },
       fontSize: {
-        '1.5xl': '22px',
-        '5.5xl':'56px',
-        '6.5xl':'64px',
-        "7.5xl":'76px',
+        "1.5xl": "22px",
+        "5.5xl": "56px",
+        "6.5xl": "64px",
+        "7.5xl": "76px",
       },
       lineHeight: {
-        '16': '64px',
-        '21':'86px',
-        '22':'88px'
+        "16": "64px",
+        "21": "86px",
+        "22": "88px",
       },
       container: {
         center: true,
