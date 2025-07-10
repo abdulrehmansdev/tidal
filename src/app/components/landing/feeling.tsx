@@ -6,9 +6,9 @@ import { FilledButton, UnFilledButton } from "./button";
 const FeelingHero = () => {
   return (
     <section
-      className="w-full h-5/6 bg-cover bg-center bg-no-repeat text-white px-6 lg:px-20 py-30"
+      className="w-full h-5/6 bg-cover bg-center bg-no-repeat text-white px-6 lg:px-20 py-30 mt-10"
       style={{
-        backgroundImage: "url('/wave.svg')"
+        backgroundImage: "url('/public2/wave.svg')"
       }}
     >
       <div className=" mx-auto grid md:grid-cols-5">
