@@ -7,7 +7,7 @@ import Hero from "../components/landing/hero";
 
 export default function Home() {
   return (
-    <section className="mx-auto container mt-4">
+    <section className="">
       <Hero />
     </section>
   );

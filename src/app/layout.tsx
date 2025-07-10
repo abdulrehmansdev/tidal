@@ -12,7 +12,7 @@ export const metadata = {
   title: {
     template: "%s", //| ' + process.env.NEXT_PUBLIC_SITE_NAME,
     default:
-      "Emergency Dental Treatment UK Wide | " +
+      "Tidal Film | " +
       process.env.NEXT_PUBLIC_SITE_NAME,
   },
   description: {
@@ -43,7 +43,7 @@ export const metadata = {
   },
   // Add important keywords
   keywords: [
-    "emergency dental care",
+    "tidal film",
     "dentist UK",
     "tooth pain",
     "dental clinic",
@@ -79,7 +79,7 @@ export const metadata = {
     title: {
       template: "%s",
       default:
-        "Emergency Dental Treatment UK Wide | " +
+        "Tidal Film | " +
         process.env.NEXT_PUBLIC_SITE_NAME,
     },
     description: {

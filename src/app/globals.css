@@ -76,11 +76,11 @@ a {
   } */
 
   .btn-primary {
-    @apply px-5  rounded-26 h-11 flex items-center justify-center border border-1.5 text-sm leading-6 font-semibold border-dark-blue text-dark-blue hover:text-white hover:bg-reddish-orange hover:border-reddish-orange transition-colors duration-300 ease-in-out;
+    @apply px-5  rounded-26 h-11 flex items-center justify-center border-1.5 text-sm leading-6 font-semibold border-dark-blue text-dark-blue hover:text-white hover:bg-reddish-dark hover:border-reddish-orange transition-colors duration-300 ease-in-out;
   }
 
   .btn-secondary {
-    @apply px-3 py-4 justify-center h-11 rounded-26 border-1.5 text-sm leading-6 border-reddish-orange font-semibold  text-offWhite hover:bg-reddish-dark transition-colors duration-300 ease-in-out;
+    @apply px-3 justify-center h-11 rounded-26 border-1.5 min-w-36  text-sm leading-6 bg-reddish-orange border-reddish-orange font-semibold  text-offWhite hover:bg-reddish-dark transition-colors duration-300 ease-in-out;
   }
   /* 
   .btn-secondary:hover {
