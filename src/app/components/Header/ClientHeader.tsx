@@ -33,39 +33,39 @@ const ClientHeader = ({ initialNavigation }: ClientHeaderProps) => {
   return (
     <>
       <header
-        className={`bg-clear-blurred sticky top-0 w-full flex items-center z-10 ${
+        className={` sticky top-0 w-full flex items-center z-10 ${
           styles.header
         } ${!isHydrated ? styles.preHydration : ""}`}
       >
         <div className="container mx-auto py-4 flex items-center relative justify-between">
           {/* Logo on the left */}
           <Link href="/" className="flex items-center gap-2 group">
-            <span className="relative w-[50px] h-[50px] block">
+            <span className="relative w-[146px] h-[58px] block">
               <Image
-                src="/public2/logo.svg"
+                src="/public2/logo2.svg"
                 alt="Tidal Film Logo"
-                width={50}
-                height={50}
-                className="w-[50px] h-auto absolute top-0 left-0 transition-opacity duration-500 group-hover:opacity-0"
+                width={146}
+                height={58}
+                className=" h-auto absolute top-0 left-0 transition-opacity duration-500 group-hover:opacity-0"
                 priority
               />
               <Image
-                src="/public2/color-logo.svg"
+                src="/public2/color-logo2.svg"
                 alt="Tidal Film Color Logo"
-                width={50}
-                height={50}
-                className="w-[50px] h-auto absolute top-0 left-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                width={146}
+                height={58}
+                className="h-auto absolute top-0 left-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 priority
               />
             </span>
-            <div className="">
+            {/* <div className="">
               <p className="text-primary font-extrabold text-xl tracking-wide ">
                 TIDAL
               </p>
               <p className="text-primary text-sm font-mediums tracking-wide">
                 FILM
               </p>
-            </div>
+            </div> */}
           </Link>
 
           {/* Desktop Navigation - Centered when CTA is shown, right-aligned when CTA is hidden */}
@@ -182,7 +182,7 @@ const ClientHeader = ({ initialNavigation }: ClientHeaderProps) => {
                     {link.label}
                   </Link>
                   <span
-                    className={`block h-1 rounded-full w-full 
+                    className={`block h-1  w-full 
                     ${
                       isActive || hoveredLink === link.label
                         ? "bg-[#FE5F55] scale-100 opacity-100"
@@ -264,17 +264,7 @@ const ClientHeader = ({ initialNavigation }: ClientHeaderProps) => {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="#"
-                className={`border border-primary !font-jost text-center px-4 py-2 rounded-full text-sm font-semibold tracking-wide transition
-                    ${
-                      pathname === "/contact"
-                        ? "bg-[#FE5F55] text-white border-[#FE5F55] hover:bg-[#ff2e3a] hover:border-[#ff2e3a]"
-                        : "text-[#1C364F] hover:bg-[#d84037] hover:border-[#d84037]  hover:text-white"
-                    }
-                  `}
-                onClick={() => setMenuOpen(false)}
-              >
+              <Link href="/contact" className="btn-primary font-jost ">
                 GET IN TOUCH
               </Link>
             </nav>
