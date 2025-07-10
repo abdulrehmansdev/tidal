@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { Play } from "lucide-react";
-import { useWork } from "@/services/workService";
+import { useWork } from "../../services/workService";
 import { FilledButton } from "./button";
 
 const WorkShowcase = () => {
@@ -48,9 +48,7 @@ const WorkShowcase = () => {
     <div className="container-standard">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
-        <h2 className="text-ourWork text-primary">
-          Our Work
-        </h2>
+        <h2 className="text-ourWork text-primary">Our Work</h2>
         <FilledButton
           text="View More Work"
           className="w-[210px]"
@@ -100,9 +98,7 @@ const WorkShowcase = () => {
                 aria-hidden="true"
               />
               <div className="group-hover:pl-1 transition-all duration-500">
-                <h3 className="text-primary text-capstone ">
-                  {item.title}
-                </h3>
+                <h3 className="text-primary text-capstone ">{item.title}</h3>
                 <p className=" text-secondary text-voluntary">
                   {item.category}
                 </p>
@@ -145,9 +141,7 @@ const WorkShowcase = () => {
                 aria-hidden="true"
               />
               <div className="group-hover:pl-1 transition-all duration-500">
-                <h3 className="text-primary text-capstone">
-                  {item.title}
-                </h3>
+                <h3 className="text-primary text-capstone">{item.title}</h3>
                 <p className="text-secondary text-voluntary">{item.category}</p>
               </div>
             </div>
