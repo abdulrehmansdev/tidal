@@ -56,6 +56,7 @@ a {
   .text-76 {
     @apply text-7.5xl font-bold leading-21 tracking-tight;
   }
+
   /* .bg-primary { @apply bg-light-indigo-50; }
   .bg-secondary { @apply bg-light-teal-200; }
   .bg-secondary-light { @apply bg-light-teal-100; }
@@ -80,7 +81,7 @@ a {
   }
 
   .btn-secondary {
-    @apply px-3 justify-center h-11 rounded-26 border-1.5 min-w-36  text-sm leading-6 bg-reddish-orange border-reddish-orange font-semibold  text-offWhite hover:bg-reddish-dark transition-colors duration-300 ease-in-out;
+    @apply px-3 justify-center h-11 rounded-26 border-1.5 min-w-36  text-sm leading-6 bg-reddish-orange border-reddish-orange font-semibold  text-offWhite hover:bg-reddish-dark hover:border-reddish-dark transition-colors duration-300 ease-in-out;
   }
   /* 
   .btn-secondary:hover {

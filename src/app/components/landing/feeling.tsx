@@ -8,7 +8,7 @@ const FeelingHero = () => {
     <section
       className="w-full h-5/6 bg-cover bg-center bg-no-repeat mt-10"
       style={{
-        backgroundImage: "url('/public2/wave.svg')"
+        backgroundImage: "url('/public2/wave.svg')",
       }}
     >
       <div className="container flex flex-col lg:flex-row w-full py-24 gap-y-3">
@@ -36,11 +36,12 @@ const FeelingHero = () => {
           </p>
 
           <div className="flex gap-4 mt-5">
-            <FilledButton
-              text="Who We Are"
-              className="w-[168px]"
-              ariaLabel="Who We Are"
-            />
+            <button
+              className="btn-secondary cursor-pointer w-44 uppercase"
+              aria-label="who we are"
+            >
+              Who We Are
+            </button>
 
             <UnFilledButton
               text="Let’s Talk"

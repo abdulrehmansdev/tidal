@@ -5,8 +5,8 @@ import { FilledButton } from "./button";
 const Hero = () => {
   return (
     <div className="container mt-10">
-      <div className="flex flex-col lg:flex-row justify-between gap-y-8 lg:gap-y-3 items-center lg:items-end">
-        <h1 className="text-56 lg:text-76 text-dark-blue">
+      <div className="flex flex-col lg:flex-row justify-between gap-y-8 lg:gap-y-3 items-center md:items-end">
+        <h1 className="text-56 xl:text-76 text-dark-blue">
           A Different Kind Of Video Production Agency
         </h1>
 
