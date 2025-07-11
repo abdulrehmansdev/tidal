@@ -60,49 +60,50 @@ const TestimonialsSlider = () => {
   return (
     <div className="overflow-hidden py-24">
       {/* Header and Arrows */}
-      <div className="container flex flex-col lg:flex-row justify-between items-center gap-y-4">
+      <div className="container flex flex-col lg:flex-row justify-between items-center gap-7 ">
         <h2 className="text-center lg:text-left  text-56 text-dark-blue">
           What Our Customers Say
         </h2>
         <div className="flex gap-4 ">
           <button
             ref={prevRef}
-            className="w-15 h-15 border border-darkest-blue group rounded-full flex items-center justify-center hover:border-reddish-orange hover:bg-reddish-orange cursor-pointer transition duration-500"
+            className="w-14 h-14 border border-darkest-blue group rounded-full flex items-center justify-center hover:border-reddish-orange hover:bg-reddish-orange cursor-pointer transition duration-500"
             aria-label="Previous testimonial"
           >
-            <span className="flex items-center justify-center h-full w-full text-3xl">
+            <span className="flex items-center justify-center h-full w-full">
               <Image
                 src="/public2/slider/left.svg"
-                alt="Logo"
+                alt="Left Arrow"
                 width={16}
                 height={12}
                 className="inline group-hover:hidden"
               />
               <Image
                 src="/public2/slider/lefts.svg"
-                alt="Logo"
+                alt="Left Arrow Hover"
                 width={16}
                 height={12}
                 className="hidden group-hover:inline"
               />
             </span>
           </button>
+
           <button
             ref={nextRef}
-            className="w-15 h-15 border-darkest-blue group rounded-full flex items-center justify-center hover:border-reddish-orange hover:bg-reddish-orange cursor-pointer transition duration-500"
+            className="w-14 h-14 border border-darkest-blue group rounded-full flex items-center justify-center hover:border-reddish-orange hover:bg-reddish-orange cursor-pointer transition duration-500"
             aria-label="Next testimonial"
           >
-            <span className="flex items-center justify-center h-full w-full text-3xl">
+            <span className="flex items-center justify-center h-full w-full">
               <Image
                 src="/public2/slider/right.svg"
-                alt="Logo"
+                alt="Right Arrow"
                 width={16}
                 height={12}
                 className="inline group-hover:hidden"
               />
               <Image
                 src="/public2/slider/rights.svg"
-                alt="Logo"
+                alt="Right Arrow Hover"
                 width={16}
                 height={12}
                 className="hidden group-hover:inline"
@@ -161,7 +162,7 @@ const TestimonialsSlider = () => {
 
               {/* Author Info */}
               <div className="mt-auto">
-                <p className="text-sm font-normal text-offWhite">
+                <p className="text-16  text-offWhite">
                   {item.author} / {item.role}
                 </p>
                 <Image
