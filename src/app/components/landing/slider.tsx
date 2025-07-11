@@ -15,9 +15,9 @@ const TestimonialsSlider = () => {
 
   if (isLoading) {
     return (
-      <section className="bg-[#f6f6fd] py-20 overflow-hidden">
+      <section className="bg-offWhite py-20 overflow-hidden">
         <div className="mx-auto px-4 text-center">
-          <div className="text-[#1e2e45]">Loading testimonials...</div>
+          <div className="text-dark-blue">Loading testimonials...</div>
         </div>
       </section>
     );
@@ -25,9 +25,9 @@ const TestimonialsSlider = () => {
 
   if (error || !testimonials) {
     return (
-      <section className="bg-[#f6f6fd] py-20 overflow-hidden">
+      <section className="bg-offWhite py-20 overflow-hidden">
         <div className="mx-auto px-4 text-center">
-          <div className="text-[#1e2e45]">Failed to load testimonials</div>
+          <div className="text-dark-blue">Failed to load testimonials</div>
         </div>
       </section>
     );
@@ -60,14 +60,14 @@ const TestimonialsSlider = () => {
   return (
       <div className="overflow-hidden">
         {/* Header and Arrows */}
-        <div className="flex justify-between items-center mb-8 container-standard">
-          <h2 className="text-customers text-primary">
+        <div className="container flex justify-between items-center">
+          <h2 className="text-56 text-dark-blue">
             What Our Customers Say
           </h2>
           <div className="hidden md:flex gap-4">
             <button
               ref={prevRef}
-              className="w-15 h-15 border border-[#1e2e45] group rounded-full flex items-center justify-center hover:border-[#FE5F55] hover:bg-[#FE5F55] hover:text-white text-[#1e2e45] cursor-pointer transition duration-500"
+              className="w-15 h-15 border border-darkest-blue group rounded-full flex items-center justify-center hover:border-reddish-orange hover:bg-reddish-orange cursor-pointer transition duration-500"
               aria-label="Previous testimonial"
             >
               <span className="flex items-center justify-center h-full w-full text-3xl">
@@ -89,7 +89,7 @@ const TestimonialsSlider = () => {
             </button>
             <button
               ref={nextRef}
-              className="w-15 h-15 border border-[#1e2e45] group rounded-full flex items-center justify-center hover:border-[#FE5F55] hover:bg-[#FE5F55] hover:text-white transition text-[#1e2e45] cursor-pointer duration-500"
+              className="w-15 h-15 border-darkest-blue group rounded-full flex items-center justify-center hover:border-reddish-orange hover:bg-reddish-orange cursor-pointer transition duration-500"
               aria-label="Next testimonial"
             >
               <span className="flex items-center justify-center h-full w-full text-3xl">
@@ -144,7 +144,7 @@ const TestimonialsSlider = () => {
         >
           {displayTestimonials.map((item, idx) => (
             <SwiperSlide key={item.id + "-" + idx} className="pb-2">
-              <div className="bg-[#287F8C] text-white rounded-xl font-medium text-2xl p-8 min-h-[280px] flex flex-col justify-between">
+              <div className="bg-teal text-offwhite rounded-xl font-medium text-2xl p-8 min-h-[280px] flex flex-col justify-between">
                 {/* Quote Icon */}
                 <Image
                   src={item.quoteIcon}
@@ -155,11 +155,11 @@ const TestimonialsSlider = () => {
                 />
 
                 {/* Quote Text */}
-                <p className="text-testmonials mb-6">{item.quote}</p>
+                <p className="text-24 text-offWhite italic font-medium">{item.quote}</p>
 
                 {/* Author Info */}
                 <div className="mt-auto">
-                  <p className="text-sarah text-[#CCD3C8]">
+                  <p className="text-sm font-normal text-offWhite">
                     {item.author} / {item.role}
                   </p>
                   <Image
