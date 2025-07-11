@@ -5,7 +5,7 @@ import WorkGrid from "../components/landing/work";
 import OurServicesSection from "../components/landing/service";
 import TestimonialsSlider from "../components/landing/slider";
 import Trusted from "../components/landing/trusted";
-
+import Touch from '../components/landing/touch';
 // export const metadata = {
 //     title: 'Emergency Dentists UK - 24/7 Urgent Dental Care',
 // };
@@ -17,9 +17,9 @@ export default function Home() {
       <FeelingSection />
       <WorkGrid />
       <OurServicesSection />
-      {/* <TestimonialsSlider /> */}
+      <TestimonialsSlider />
       <Trusted />
-      {/* <Touch /> */}
+      <Touch />
     </section>
   );
 }

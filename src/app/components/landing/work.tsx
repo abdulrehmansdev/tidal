@@ -44,7 +44,7 @@ const WorkShowcase = () => {
   const topWorks = workData.slice(0, 5);
 
   return (
-    <div className="container py-24">
+    <div className="container my-16">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
         <h2 className="text-56 text-dark-blue">Our Work</h2>

@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import { useTestimonials } from "@/services/testimonialService";
+import { useTestimonials } from "../../services/testimonialService";
 import Image from "next/image";
 
 const TestimonialsSlider = () => {
@@ -58,9 +58,9 @@ const TestimonialsSlider = () => {
   const initialSlide = Math.floor(displayTestimonials.length / 2);
 
   return (
-      <div className="overflow-hidden">
+      <div className="overflow-hidden my-16">
         {/* Header and Arrows */}
-        <div className="container flex justify-between items-center">
+        <div className="container flex justify-between items-center gap-y-4">
           <h2 className="text-56 text-dark-blue">
             What Our Customers Say
           </h2>
@@ -72,14 +72,14 @@ const TestimonialsSlider = () => {
             >
               <span className="flex items-center justify-center h-full w-full text-3xl">
                 <Image
-                  src="/slider/left.svg"
+                  src="/public2/slider/left.svg"
                   alt="Logo"
                   width={16}
                   height={12}
                  className="inline group-hover:hidden"
                 />
                 <Image
-                  src="/slider/lefts.svg"
+                  src="/public2/slider/lefts.svg"
                   alt="Logo"
                   width={16}
                   height={12}
@@ -94,14 +94,14 @@ const TestimonialsSlider = () => {
             >
               <span className="flex items-center justify-center h-full w-full text-3xl">
                 <Image
-                  src="/slider/right.svg"
+                  src="/public2/slider/right.svg"
                   alt="Logo"
                   width={16}
                   height={12}
                   className="inline group-hover:hidden"
                 />
                 <Image
-                  src="/slider/rights.svg"
+                  src="/public2/slider/rights.svg"
                   alt="Logo"
                   width={16}
                   height={12}
@@ -144,7 +144,7 @@ const TestimonialsSlider = () => {
         >
           {displayTestimonials.map((item, idx) => (
             <SwiperSlide key={item.id + "-" + idx} className="pb-2">
-              <div className="bg-teal text-offwhite rounded-xl font-medium text-2xl p-8 min-h-[280px] flex flex-col justify-between">
+              <div className="bg-teal text-offwhite rounded-xl font-medium text-2xl p-8 min-h-[280px] flex flex-col gap-y-4 justify-between">
                 {/* Quote Icon */}
                 <Image
                   src={item.quoteIcon}
@@ -155,7 +155,7 @@ const TestimonialsSlider = () => {
                 />
 
                 {/* Quote Text */}
-                <p className="text-24 text-offWhite italic font-medium">{item.quote}</p>
+                <p className="text-24 text-offWhite italic !font-medium">{item.quote}</p>
 
                 {/* Author Info */}
                 <div className="mt-auto">
