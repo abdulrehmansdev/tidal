@@ -17,9 +17,9 @@ export default function Home() {
       <FeelingSection />
       <WorkGrid />
       <OurServicesSection />
-      <TestimonialsSlider />
-      {/* <Trusted />
-      <Touch /> */}
+      {/* <TestimonialsSlider /> */}
+      <Trusted />
+      {/* <Touch /> */}
     </section>
   );
 }
