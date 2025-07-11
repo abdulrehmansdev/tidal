@@ -2,16 +2,15 @@
 import Image from "next/image";
 import { Play } from "lucide-react";
 import { useWork } from "../../services/workService";
-import { FilledButton } from "./button";
 
 const WorkShowcase = () => {
   const { data: workData, isLoading, error } = useWork();
 
   if (isLoading) {
     return (
-      <section className="bg-[#f6f6fd] px-6 py-16">
+      <section className="bg-offWhite px-6 py-16">
         <div className="max-w-5/6 mx-auto text-center">
-          <div className="text-[#225f71]">Loading work items...</div>
+          <div className="text-teal">Loading work items...</div>
         </div>
       </section>
     );
@@ -19,9 +18,9 @@ const WorkShowcase = () => {
 
   if (error) {
     return (
-      <section className="bg-[#f6f6fd] px-6 py-16">
+      <section className="bg-offWhite px-6 py-16">
         <div className="max-w-5/6 mx-auto text-center">
-          <div className="text-[#ff4b5c]">
+          <div className="text-reddish-orange">
             {typeof error === "string"
               ? error
               : "An error occurred while loading work items. Please try again later."}
@@ -33,9 +32,9 @@ const WorkShowcase = () => {
 
   if (!workData) {
     return (
-      <section className="bg-[#f6f6fd] px-6 py-16">
+      <section className="bg-offWhite px-6 py-16">
         <div className="max-w-5/6 mx-auto text-center">
-          <div className="text-[[#FE5F55]">No work items found.</div>
+          <div className="text-reddish-orange">No work items found.</div>
         </div>
       </section>
     );
@@ -80,7 +79,7 @@ const WorkShowcase = () => {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="transform translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
                   <div className="bg-white/30 rounded-full p-4 shadow-lg hover:bg-white transition-colors duration-200">
-                    <Play className="w-8 h-8 text-[#225f71]/60 fill-current" />
+                    <Play className="w-8 h-8 text-dark-blue/60 fill-current" />
                   </div>
                 </div>
               </div>
@@ -93,7 +92,7 @@ const WorkShowcase = () => {
               />
               <div className="group-hover:pl-1 transition-all duration-500">
                 <h3 className="text-22 text-dark-blue ">{item.title}</h3>
-                <p className=" text-base text-teal font-normal leading-tight tracking-tight">
+                <p className=" text-lg text-teal font-normal leading-tight tracking-tight">
                   {item.category}
                 </p>
               </div>
@@ -123,7 +122,7 @@ const WorkShowcase = () => {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="transform translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
                   <div className="bg-white/30 rounded-full p-3 shadow-lg hover:bg-white transition-colors duration-200">
-                    <Play className="w-6 h-6 text-[#225f71]/70 fill-current" />
+                    <Play className="w-6 h-6 text-dark-blue/70 fill-current" />
                   </div>
                 </div>
               </div>
@@ -131,7 +130,7 @@ const WorkShowcase = () => {
 
             <div className="mt-2 flex items-center gap-x-1 pl-1 ">
               <span
-                className="h-10 w-0.5 bg-[#ff645a] opacity-0 group-hover:opacity-100 transition-all duration-500"
+                className="h-10 w-0.5 bg-reddish-orange opacity-0 group-hover:opacity-100 transition-all duration-500"
                 aria-hidden="true"
               />
               <div className="group-hover:pl-1 transition-all duration-500">

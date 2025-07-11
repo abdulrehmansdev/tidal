@@ -7,15 +7,21 @@ const OurServicesSection = () => {
   return (
     <section
       className="w-full bg-cover bg-center bg-no-repeat px-6 lg:px-20 py-20"
-      style={{ backgroundImage: "url('/wave.svg')" }} // Place your background image in /public
+      style={{ backgroundImage: "url('/public2/wave.svg')" }}
     >
-      <div className=" mx-auto flex flex-col md:flex-row gap-10 items-center">
+      <div className=" container flex flex-col lg:flex-row w-full py-24 gap-y-3">
         {/* Left Content */}
-        <div className="text-white md:w-2/4">
-          <h3 className="text-idea">
-            No Idea Too Big <br />
+        <div className="lg:w-2/5 ">
+          <h3 className="text-56 lg:text-64 text-offWhite pb-6 lg:py-0">
+          No Idea Too Big <br />
             Or Too Small.
           </h3>
+        </div>
+        <div className="text-white md:w-2/4">
+          {/* <h3 className="text-idea">
+            No Idea Too Big <br />
+            Or Too Small.
+          </h3> */}
           <p className="md:w-3/3 text-ideaGraph mb-8 md:pr-4">
             At Tidal Film, we offer a wide range of video production services
             designed to entertain, inform, and engage. Whether you’re looking to
