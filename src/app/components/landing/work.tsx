@@ -1,17 +1,43 @@
 "use client";
 import Image from "next/image";
 import { Play } from "lucide-react";
-import { useWork } from "@/services/workService";
-import { FilledButton } from "./button";
+import { useWork } from "../../services/workService";
+import React, { useRef, useEffect, useState } from "react";
+
+// Subcomponent for meta info with dynamic span height
+const WorkItemMeta = ({ title, category, spanColor, textSize }: { title: string; category: string; spanColor: string; textSize: string }) => {
+  const divRef = useRef<HTMLDivElement>(null);
+  const [divHeight, setDivHeight] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    if (divRef.current) {
+      setDivHeight(divRef.current.offsetHeight);
+    }
+  }, [title, category]);
+
+  return (
+    <div className="mt-2 flex items-center gap-x-1 pl-1">
+      <span
+        className={`w-0.5 ${spanColor} opacity-0 group-hover:opacity-100 transition-all duration-500`}
+        style={{ height: divHeight ? `${divHeight}px` : undefined }}
+        aria-hidden="true"
+      />
+      <div ref={divRef} className="group-hover:pl-1 transition-all duration-500">
+        <h3 className={`text-22 text-dark-blue`}>{title}</h3>
+        <p className={`${textSize} text-teal font-normal leading-tight tracking-tight`}>{category}</p>
+      </div>
+    </div>
+  );
+};
 
 const WorkShowcase = () => {
   const { data: workData, isLoading, error } = useWork();
 
   if (isLoading) {
     return (
-      <section className="bg-[#f6f6fd] px-6 py-16">
+      <section className="bg-offWhite px-6 py-16">
         <div className="max-w-5/6 mx-auto text-center">
-          <div className="text-[#225f71]">Loading work items...</div>
+          <div className="text-teal">Loading work items...</div>
         </div>
       </section>
     );
@@ -19,9 +45,9 @@ const WorkShowcase = () => {
 
   if (error) {
     return (
-      <section className="bg-[#f6f6fd] px-6 py-16">
+      <section className="bg-offWhite px-6 py-16">
         <div className="max-w-5/6 mx-auto text-center">
-          <div className="text-[#ff4b5c]">
+          <div className="text-reddish-orange">
             {typeof error === "string"
               ? error
               : "An error occurred while loading work items. Please try again later."}
@@ -33,9 +59,9 @@ const WorkShowcase = () => {
 
   if (!workData) {
     return (
-      <section className="bg-[#f6f6fd] px-6 py-16">
+      <section className="bg-offWhite px-6 py-16">
         <div className="max-w-5/6 mx-auto text-center">
-          <div className="text-[[#FE5F55]">No work items found.</div>
+          <div className="text-reddish-orange">No work items found.</div>
         </div>
       </section>
     );
@@ -45,23 +71,15 @@ const WorkShowcase = () => {
   const topWorks = workData.slice(0, 5);
 
   return (
-    <div className="container-standard">
+    <div className="container my-16">
       {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
-        <h2 className="text-ourWork text-primary">
-          Our Work
-        </h2>
-        <FilledButton
-          text="View More Work"
-          className="w-[210px]"
-          ariaLabel="View More Work"
-        />
-        {/* <button
-            className="w-[200px] font-semibold h-[44px] text-sm bg-[#FE5F55] hover:bg-[#d84037] hover:text-white hover:border-[#d84037] transition-all duration-300 text-white px-6 py-3 rounded-full uppercase tracking-wider cursor-pointer"
-            aria-label="View More Work"
-          >
+        <h2 className="text-56 text-dark-blue">Our Work</h2>
+        <div className="hidden md:flex h-full items-end">
+          <button className="btn-secondary uppercase" aria-label="View All Work">
             View More Work
-          </button> */}
+          </button>
+        </div>
       </div>
 
       {/* Custom Grid */}
@@ -78,7 +96,7 @@ const WorkShowcase = () => {
                 alt={item.title}
                 width={400}
                 height={300}
-                className="rounded-xl object-cover w-full h-auto transition-all duration-300 group-hover:scale-105"
+                className="rounded-xl object-cover w-full h-[200px] sm:h-[250px] lg:h-auto transition-all duration-300 group-hover:scale-105"
               />
 
               {/* Dark overlay on hover */}
@@ -88,26 +106,18 @@ const WorkShowcase = () => {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="transform translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
                   <div className="bg-white/30 rounded-full p-4 shadow-lg hover:bg-white transition-colors duration-200">
-                    <Play className="w-8 h-8 text-[#225f71]/60 fill-current" />
+                    <Play className="w-8 h-8 text-dark-blue/60 fill-current" />
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-2 flex items-center gap-x-1 pl-1">
-              <span
-                className="h-10 w-0.5 bg-[#ff645a] opacity-0 group-hover:opacity-100 transition-all duration-500"
-                aria-hidden="true"
-              />
-              <div className="group-hover:pl-1 transition-all duration-500">
-                <h3 className="text-primary text-capstone ">
-                  {item.title}
-                </h3>
-                <p className=" text-secondary text-voluntary">
-                  {item.category}
-                </p>
-              </div>
-            </div>
+            <WorkItemMeta
+              title={item.title}
+              category={item.category}
+              spanColor="bg-[#ff645a]"
+              textSize="text-lg"
+            />
           </div>
         ))}
 
@@ -123,7 +133,7 @@ const WorkShowcase = () => {
                 alt={item.title}
                 width={400}
                 height={300}
-                className="rounded-xl object-cover w-full h-auto transition-all duration-300 group-hover:scale-105"
+                className="rounded-xl object-cover w-full h-[200px] sm:h-[250px] lg:h-auto transition-all duration-300 group-hover:scale-105"
               />
 
               {/* Dark overlay on hover */}
@@ -133,26 +143,26 @@ const WorkShowcase = () => {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="transform translate-y-8 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
                   <div className="bg-white/30 rounded-full p-3 shadow-lg hover:bg-white transition-colors duration-200">
-                    <Play className="w-6 h-6 text-[#225f71]/70 fill-current" />
+                    <Play className="w-6 h-6 text-dark-blue/70 fill-current" />
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-2 flex items-center gap-x-1 pl-1 ">
-              <span
-                className="h-10 w-0.5 bg-[#ff645a] opacity-0 group-hover:opacity-100 transition-all duration-500"
-                aria-hidden="true"
-              />
-              <div className="group-hover:pl-1 transition-all duration-500">
-                <h3 className="text-primary text-capstone">
-                  {item.title}
-                </h3>
-                <p className="text-secondary text-voluntary">{item.category}</p>
-              </div>
-            </div>
+            <WorkItemMeta
+              title={item.title}
+              category={item.category}
+              spanColor="bg-reddish-orange"
+              textSize="text-base"
+            />
           </div>
         ))}
+      </div>
+      {/* Mobile-only View More Work button */}
+      <div className="flex md:hidden justify-center mt-8">
+        <button className="btn-secondary uppercase max-w-xs" aria-label="View All Work">
+          View More Work
+        </button>
       </div>
     </div>
   );

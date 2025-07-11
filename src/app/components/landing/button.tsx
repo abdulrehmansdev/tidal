@@ -21,7 +21,7 @@ export const FilledButton = ({ text, className, ariaLabel }: FilledButtonProps) 
 export const UnFilledButton = ({ text, className, ariaLabel }: FilledButtonProps) => {
   return (
     <button
-      className={`h-[44px] border !font-jost border-white px-5 py-2.5 rounded-full text-sm  uppercase cursor-pointer leading-[24px] tracking-[0.1em] bg-transparent text-white  hover:bg-[#d84037] hover:text-white hover:border-[#d84037] font-semibold transition-all duration-100${className ? ` ${className}` : ''}`}
+      className={`h-[44px] border !font-jost border-offWhite px-5 py-2.5 rounded-full text-sm  uppercase cursor-pointer leading-[24px] tracking-[0.1em] bg-transparent text-offWhite  hover:bg-[#d84037] hover:text-white hover:border-[#d84037] font-semibold transition-all duration-100${className ? ` ${className}` : ''}`}
       aria-label={ariaLabel}
     >
       {text}

@@ -49,16 +49,18 @@ export default {
         //   100: '#e6fff9',
         //   200: '#AFFFED',
         // },
-
         "dark-gray": "#495867",
         "dark-blue": "#1C4062",
         "darker-blue": "#1C364F",
+        teal: "#287F8C",
+        "teal-lite":"#CCD3C8",
         "darkest-blue": "#001F3B",
         "pale-blue": "#BDD5EA",
         "blue-green": "#328392",
         offWhite: "#F7F7FF",
+        "sea-litest":"#E6E9E4",
         "reddish-orange": "#FE5F55",
-        "reddish-dark":"#b8463e",
+        "reddish-dark": "#b8463e",
 
         black: "#000000",
         white: "#FFFFFF",
@@ -105,7 +107,7 @@ export default {
         // },
       },
       fontFamily: {
-        montserrat: ["Montserrat","Jost", "sans-serif"],
+        montserrat: ["Montserrat", "Jost", "sans-serif"],
       },
       fontSize: {
         "1.5xl": "22px",
@@ -120,20 +122,24 @@ export default {
       },
       container: {
         center: true,
-        padding: "1rem",
+        padding: {
+          DEFAULT: "1.5rem",
+          lg: "3rem",
+          '3xl':'0rem'
+        },
         screens: {
           sm: "640px",
           md: "768px",
           lg: "1024px",
           xl: "1280px",
-          "2xl": "1536px",
+          "2xl": "1440px",
         },
       },
       borderRadius: {
-        '26': '26px',
+        "26": "26px",
       },
       borderWidth: {
-        '1.5': '1.5px',
+        "1.5": "1.5px",
       },
     },
   },

@@ -33,8 +33,12 @@ a {
     
   } */
 
+  .text-16 {
+    @apply text-base font-normal leading-tight tracking-tight;
+  }
+
   .text-20 {
-    @apply text-xl font-normal leading-tight tracking-tights;
+    @apply text-xl font-normal leading-tight tracking-wide;
   }
 
   .text-22 {
@@ -56,6 +60,7 @@ a {
   .text-76 {
     @apply text-7.5xl font-bold leading-21 tracking-tight;
   }
+
   /* .bg-primary { @apply bg-light-indigo-50; }
   .bg-secondary { @apply bg-light-teal-200; }
   .bg-secondary-light { @apply bg-light-teal-100; }
@@ -76,11 +81,11 @@ a {
   } */
 
   .btn-primary {
-    @apply px-5  rounded-26 h-11 flex items-center justify-center border border-1.5 text-sm leading-6 font-semibold border-dark-blue text-dark-blue hover:text-white hover:bg-reddish-orange hover:border-reddish-orange transition-colors duration-300 ease-in-out;
+    @apply px-5  rounded-26 h-11 flex items-center justify-center border-1.5 text-sm leading-6 font-semibold border-dark-blue text-dark-blue hover:text-white hover:bg-reddish-dark hover:border-reddish-orange transition-colors duration-300 ease-in-out;
   }
 
   .btn-secondary {
-    @apply px-3 py-4 justify-center h-11 rounded-26 border-1.5 text-sm leading-6 border-reddish-orange font-semibold  text-offWhite hover:bg-reddish-dark transition-colors duration-300 ease-in-out;
+    @apply px-3 justify-center h-11 rounded-26 border-1.5 min-w-36  text-sm leading-6 bg-reddish-orange border-reddish-orange font-semibold  text-offWhite hover:bg-reddish-dark hover:border-reddish-dark transition-colors duration-300 ease-in-out;
   }
   /* 
   .btn-secondary:hover {

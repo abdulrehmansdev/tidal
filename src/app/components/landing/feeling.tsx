@@ -6,19 +6,19 @@ import { FilledButton, UnFilledButton } from "./button";
 const FeelingHero = () => {
   return (
     <section
-      className="w-full h-5/6 bg-cover bg-center bg-no-repeat text-white px-6 lg:px-20 py-30"
+      className="w-full h-5/6 bg-cover bg-center bg-no-repeat mt-10"
       style={{
-        backgroundImage: "url('/wave.svg')"
+        backgroundImage: "url('/public2/wave.svg')",
       }}
     >
-      <div className=" mx-auto grid md:grid-cols-5">
-        <div className="md:col-span-2">
-          <h1 className="flex justify-start text-2xl md:text-5xl lg:text-films ">
-            Making Films <br /> With Feeling
-          </h1>
+      <div className="container flex flex-col lg:flex-row w-full py-24 gap-y-3">
+        <div className="lg:w-2/5 ">
+          <h3 className="text-56 lg:text-64 text-offWhite pb-6 lg:py-0 lg:w-5/6">
+            Making Films With Feeling
+          </h3>
         </div>
 
-        <div className=" md:col-span-3 paragraph-base text-white space-y-6">
+        <div className="lg:w-3/5 flex flex-col gap-y-4 text-20 text-offWhite">
           <p>
             At Tidal Film, we’re passionate about storytelling that connects.
             Based in sunny Southend-on-Sea, we’re a friendly and approachable
@@ -35,12 +35,13 @@ const FeelingHero = () => {
             they take action — and that’s what great storytelling is all about.
           </p>
 
-          <div className="flex gap-4 mt-12">
-            <FilledButton
-              text="Who We Are"
-              className="w-[168px]"
-              ariaLabel="Who We Are"
-            />
+          <div className="flex gap-4 mt-5">
+            <button
+              className="btn-secondary cursor-pointer w-44 uppercase"
+              aria-label="who we are"
+            >
+              Who We Are
+            </button>
 
             <UnFilledButton
               text="Let’s Talk"
