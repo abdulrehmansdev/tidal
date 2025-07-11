@@ -5,8 +5,8 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-darkest-blue  text-offWhite font-montserrat">
-      <div className="w-full py-12">
-        <div className="w-full  mx-auto grid grid-cols-1 lg:grid-cols-5 gap-8 container">
+      <div className="w-full py-12 container">
+        <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-5 gap-8">
           {/* Logo & Description */}
           <div className="flex flex-col justify-between h-56 col-span-1 lg:col-span-2">
             <div className="flex ">
@@ -16,12 +16,8 @@ export default function Footer() {
                 width={174}
                 height={70}
               />
-              {/* <div>
-              <span className="font-bold text-xl">TIDAL</span>
-              <div className="text-lg font-light leading-none">FILM</div>
-            </div> */}
             </div>
-            <p className=" text-base w-[360px] pr-4">
+            <p className=" text-base w-[360px] pr-4 leading-tight tracking-wide ">
               Tidal Film is a video production company creating high-quality
               films for businesses, charities, and brands.
             </p>
@@ -77,8 +73,8 @@ export default function Footer() {
             </div>
           </div>
           {/* Explore */}
-          <div className="col-span-1">
-            <h3 className=" text-22 pb-5">Explore</h3>
+          <div className="col-span-1 flex flex-col justify-between">
+            <h3 className=" text-22">Explore</h3>
             <ul className="space-y-3 text-20">
               <li>
                 <Link href="#">
@@ -108,8 +104,8 @@ export default function Footer() {
             </ul>
           </div>
           {/* Services */}
-          <div className="col-span-1 ">
-            <h3 className="text-22 pb-5">Services</h3>
+          <div className="col-span-1 flex flex-col justify-between">
+            <h3 className="text-22 ">Services</h3>
             <ul className="space-y-3 text-20">
               <li>
                 <Link href="#">
@@ -139,7 +135,7 @@ export default function Footer() {
             </ul>
           </div>
           {/* Contact */}
-          <div className="col-span-1 ">
+          <div className="col-span-1 flex flex-col justify-between">
             <h3 className="text-22 pb-5">Contact</h3>
             <ul className="space-y-3 text-20">
               <li>
@@ -161,7 +157,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="w-full py-5 flex flex-col lg:flex-row items-center justify-between text-16 gap-8 container">
+      <div className="w-full py-5 flex flex-col lg:flex-row justify-between text-16 gap-8 container">
         <div className="flex flex-col lg:flex-row gap-4">
           <div>2025 © Tidal Film. Company Number: 06701707</div>
           <div>
