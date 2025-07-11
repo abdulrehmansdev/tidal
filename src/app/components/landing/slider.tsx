@@ -58,123 +58,125 @@ const TestimonialsSlider = () => {
   const initialSlide = Math.floor(displayTestimonials.length / 2);
 
   return (
-      <div className="overflow-hidden my-16">
-        {/* Header and Arrows */}
-        <div className="container flex justify-between items-center gap-y-4">
-          <h2 className="text-56 text-dark-blue">
-            What Our Customers Say
-          </h2>
-          <div className="hidden md:flex gap-4">
-            <button
-              ref={prevRef}
-              className="w-15 h-15 border border-darkest-blue group rounded-full flex items-center justify-center hover:border-reddish-orange hover:bg-reddish-orange cursor-pointer transition duration-500"
-              aria-label="Previous testimonial"
-            >
-              <span className="flex items-center justify-center h-full w-full text-3xl">
-                <Image
-                  src="/public2/slider/left.svg"
-                  alt="Logo"
-                  width={16}
-                  height={12}
-                 className="inline group-hover:hidden"
-                />
-                <Image
-                  src="/public2/slider/lefts.svg"
-                  alt="Logo"
-                  width={16}
-                  height={12}
-                  className="hidden group-hover:inline"
-                />
-              </span>
-            </button>
-            <button
-              ref={nextRef}
-              className="w-15 h-15 border-darkest-blue group rounded-full flex items-center justify-center hover:border-reddish-orange hover:bg-reddish-orange cursor-pointer transition duration-500"
-              aria-label="Next testimonial"
-            >
-              <span className="flex items-center justify-center h-full w-full text-3xl">
-                <Image
-                  src="/public2/slider/right.svg"
-                  alt="Logo"
-                  width={16}
-                  height={12}
-                  className="inline group-hover:hidden"
-                />
-                <Image
-                  src="/public2/slider/rights.svg"
-                  alt="Logo"
-                  width={16}
-                  height={12}
-                  className="hidden group-hover:inline"
-                />
-              </span>
-            </button>
-          </div>
+    <div className="overflow-hidden py-24">
+      {/* Header and Arrows */}
+      <div className="container flex flex-col lg:flex-row justify-between items-center gap-y-4">
+        <h2 className="text-center lg:text-left  text-56 text-dark-blue">
+          What Our Customers Say
+        </h2>
+        <div className="flex gap-4 ">
+          <button
+            ref={prevRef}
+            className="w-15 h-15 border border-darkest-blue group rounded-full flex items-center justify-center hover:border-reddish-orange hover:bg-reddish-orange cursor-pointer transition duration-500"
+            aria-label="Previous testimonial"
+          >
+            <span className="flex items-center justify-center h-full w-full text-3xl">
+              <Image
+                src="/public2/slider/left.svg"
+                alt="Logo"
+                width={16}
+                height={12}
+                className="inline group-hover:hidden"
+              />
+              <Image
+                src="/public2/slider/lefts.svg"
+                alt="Logo"
+                width={16}
+                height={12}
+                className="hidden group-hover:inline"
+              />
+            </span>
+          </button>
+          <button
+            ref={nextRef}
+            className="w-15 h-15 border-darkest-blue group rounded-full flex items-center justify-center hover:border-reddish-orange hover:bg-reddish-orange cursor-pointer transition duration-500"
+            aria-label="Next testimonial"
+          >
+            <span className="flex items-center justify-center h-full w-full text-3xl">
+              <Image
+                src="/public2/slider/right.svg"
+                alt="Logo"
+                width={16}
+                height={12}
+                className="inline group-hover:hidden"
+              />
+              <Image
+                src="/public2/slider/rights.svg"
+                alt="Logo"
+                width={16}
+                height={12}
+                className="hidden group-hover:inline"
+              />
+            </span>
+          </button>
         </div>
-
-        <Swiper
-          modules={[Navigation]}
-          onInit={(swiper) => {
-            // Assign navigation elements after refs are ready
-            // @ts-ignore
-            swiper.params.navigation.prevEl = prevRef.current;
-            // @ts-ignore
-            swiper.params.navigation.nextEl = nextRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }}
-          centeredSlides={true}
-          spaceBetween={30}
-          slidesPerView={1.2}
-          loop={true}
-          initialSlide={initialSlide}
-          breakpoints={{
-            768: {
-              slidesPerView: 2.2,
-              spaceBetween: 40,
-              centeredSlides: true,
-            },
-            1024: {
-              slidesPerView: 3.2,
-              spaceBetween: 50,
-              centeredSlides: true,
-            },
-          }}
-          className="!overflow-visible"
-        >
-          {displayTestimonials.map((item, idx) => (
-            <SwiperSlide key={item.id + "-" + idx} className="pb-2">
-              <div className="bg-teal text-offwhite rounded-xl font-medium text-2xl p-8 min-h-[280px] flex flex-col gap-y-4 justify-between">
-                {/* Quote Icon */}
-                <Image
-                  src={item.quoteIcon}
-                  alt="Quote"
-                  width={30}
-                  height={30}
-                  className="mb-4"
-                />
-
-                {/* Quote Text */}
-                <p className="text-24 text-offWhite italic !font-medium">{item.quote}</p>
-
-                {/* Author Info */}
-                <div className="mt-auto">
-                  <p className="text-sm font-normal text-offWhite">
-                    {item.author} / {item.role}
-                  </p>
-                  <Image
-                    src={item.logo}
-                    alt="Logo"
-                    width={100}
-                    height={30}
-                    className="mt-2"
-                  />
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
       </div>
+
+      <Swiper
+        modules={[Navigation]}
+        onInit={(swiper) => {
+          // Assign navigation elements after refs are ready
+          // @ts-ignore
+          swiper.params.navigation.prevEl = prevRef.current;
+          // @ts-ignore
+          swiper.params.navigation.nextEl = nextRef.current;
+          swiper.navigation.init();
+          swiper.navigation.update();
+        }}
+        centeredSlides={true}
+        spaceBetween={30}
+        slidesPerView={1.2}
+        loop={true}
+        initialSlide={initialSlide}
+        breakpoints={{
+          768: {
+            slidesPerView: 2.2,
+            spaceBetween: 40,
+            centeredSlides: true,
+          },
+          1024: {
+            slidesPerView: 3.2,
+            spaceBetween: 50,
+            centeredSlides: true,
+          },
+        }}
+        className="!overflow-visible"
+      >
+        {displayTestimonials.map((item, idx) => (
+          <SwiperSlide key={item.id + "-" + idx} className="pt-12">
+            <div className="bg-teal text-offwhite rounded-xl font-medium text-2xl p-12 min-h-[280px] flex flex-col gap-y-4 justify-between">
+              {/* Quote Icon */}
+              <Image
+                src={item.quoteIcon}
+                alt="Quote"
+                width={30}
+                height={30}
+                className="mb-4"
+              />
+
+              {/* Quote Text */}
+              <p className="text-2xl text-offWhite italic !font-medium">
+                {item.quote}
+              </p>
+
+              {/* Author Info */}
+              <div className="mt-auto">
+                <p className="text-sm font-normal text-offWhite">
+                  {item.author} / {item.role}
+                </p>
+                <Image
+                  src={item.logo}
+                  alt="Logo"
+                  width={100}
+                  height={30}
+                  className="mt-2"
+                />
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };
 
