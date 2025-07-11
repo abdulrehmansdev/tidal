@@ -78,7 +78,7 @@ export default function Footer() {
           </div>
           {/* Explore */}
           <div className="col-span-1">
-            <h3 className=" text-22 pb-5  ">Explore</h3>
+            <h3 className=" text-22 pb-5">Explore</h3>
             <ul className="space-y-3 text-20">
               <li>
                 <Link href="#">
@@ -161,28 +161,31 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="w-full mx-auto pt-5 flex flex-col md:flex-row items-center justify-between text-base text-[#BDD5EA] gap-2 container">
-        <div>
-          2025 © Tidal Film. Company Number: 06701707 &nbsp;|&nbsp;
-          <Link href="#" className="underline hover:text-white">
-            Cookies Policy
-          </Link>{" "}
-          &nbsp;|&nbsp;
-          <Link href="#" className="underline hover:text-white">
-            Privacy Policy
-          </Link>{" "}
-          &nbsp;|&nbsp;
-          <Link href="#" className="underline hover:text-white">
-            GDPR Consent Form
-          </Link>
+      <div className="w-full py-5 flex flex-col lg:flex-row items-center justify-between text-16 gap-8 container">
+        <div className="flex flex-col lg:flex-row gap-4">
+          <div>2025 © Tidal Film. Company Number: 06701707</div>
+          <div>
+            {" "}
+            <Link href="#" className="underline ">
+              Cookies Policy
+            </Link>{" "}
+            &nbsp;|&nbsp;
+            <Link href="#" className="underline ">
+              Privacy Policy
+            </Link>{" "}
+            &nbsp;|&nbsp;
+            <Link href="#" className="underline ">
+              GDPR Consent Form
+            </Link>
+          </div>
         </div>
-        <div className="flex gap-2 text-base">
-          Built by{" "}
-          <a href="#" className="underline hover:text-white">
+        <div className="flex  ">
+          Built by &nbsp;
+          <a href="#" className="underline ">
             Adam Toms
           </a>
-          . Designed by{" "}
-          <a href="#" className="underline hover:text-white">
+          . Designed by &nbsp;
+          <a href="#" className="underline ">
             SourceCodeCreative
           </a>
         </div>

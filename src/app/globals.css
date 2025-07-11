@@ -34,7 +34,7 @@ a {
   } */
 
   .text-16 {
-    @apply text-base font-normal leading-tight tracking-wide;
+    @apply text-base font-normal leading-tight tracking-tight;
   }
 
   .text-20 {
