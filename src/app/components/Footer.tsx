@@ -135,7 +135,7 @@ export default function Footer() {
             </ul>
           </div>
           {/* Contact */}
-          <div className="col-span-1 flex flex-col justify-between">
+          <div className="col-span-1">
             <h3 className="text-22 pb-5">Contact</h3>
             <ul className="space-y-3 text-20">
               <li>

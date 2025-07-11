@@ -2,6 +2,33 @@
 import Image from "next/image";
 import { Play } from "lucide-react";
 import { useWork } from "../../services/workService";
+import React, { useRef, useEffect, useState } from "react";
+
+// Subcomponent for meta info with dynamic span height
+const WorkItemMeta = ({ title, category, spanColor, textSize }: { title: string; category: string; spanColor: string; textSize: string }) => {
+  const divRef = useRef<HTMLDivElement>(null);
+  const [divHeight, setDivHeight] = useState<number | undefined>(undefined);
+
+  useEffect(() => {
+    if (divRef.current) {
+      setDivHeight(divRef.current.offsetHeight);
+    }
+  }, [title, category]);
+
+  return (
+    <div className="mt-2 flex items-center gap-x-1 pl-1">
+      <span
+        className={`w-0.5 ${spanColor} opacity-0 group-hover:opacity-100 transition-all duration-500`}
+        style={{ height: divHeight ? `${divHeight}px` : undefined }}
+        aria-hidden="true"
+      />
+      <div ref={divRef} className="group-hover:pl-1 transition-all duration-500">
+        <h3 className={`text-22 text-dark-blue`}>{title}</h3>
+        <p className={`${textSize} text-teal font-normal leading-tight tracking-tight`}>{category}</p>
+      </div>
+    </div>
+  );
+};
 
 const WorkShowcase = () => {
   const { data: workData, isLoading, error } = useWork();
@@ -85,18 +112,12 @@ const WorkShowcase = () => {
               </div>
             </div>
 
-            <div className="mt-2 flex items-center gap-x-1 pl-1">
-              <span
-                className="h-10 w-0.5 bg-[#ff645a] opacity-0 group-hover:opacity-100 transition-all duration-500"
-                aria-hidden="true"
-              />
-              <div className="group-hover:pl-1 transition-all duration-500">
-                <h3 className="text-22 text-dark-blue ">{item.title}</h3>
-                <p className=" text-lg text-teal font-normal leading-tight tracking-tight">
-                  {item.category}
-                </p>
-              </div>
-            </div>
+            <WorkItemMeta
+              title={item.title}
+              category={item.category}
+              spanColor="bg-[#ff645a]"
+              textSize="text-lg"
+            />
           </div>
         ))}
 
@@ -128,18 +149,12 @@ const WorkShowcase = () => {
               </div>
             </div>
 
-            <div className="mt-2 flex items-center gap-x-1 pl-1 ">
-              <span
-                className="h-10 w-0.5 bg-reddish-orange opacity-0 group-hover:opacity-100 transition-all duration-500"
-                aria-hidden="true"
-              />
-              <div className="group-hover:pl-1 transition-all duration-500">
-                <h3 className="text-22 text-dark-blue ">{item.title}</h3>
-                <p className=" text-base text-teal font-normal leading-tight tracking-tight">
-                  {item.category}
-                </p>
-              </div>
-            </div>
+            <WorkItemMeta
+              title={item.title}
+              category={item.category}
+              spanColor="bg-reddish-orange"
+              textSize="text-base"
+            />
           </div>
         ))}
       </div>

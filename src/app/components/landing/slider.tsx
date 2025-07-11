@@ -90,7 +90,7 @@ const TestimonialsSlider = () => {
 
           <button
             ref={nextRef}
-            className="w-14 h-14 border border-darkest-blue group rounded-full flex items-center justify-center hover:border-reddish-orange hover:bg-reddish-orange cursor-pointer transition duration-500"
+            className="w-14 h-14 border border-darkest-blue group rounded-full flex items-center justify-center hover:border-reddish-orange hover:bg-reddish-orange cursor-pointer transition duration-300"
             aria-label="Next testimonial"
           >
             <span className="flex items-center justify-center h-full w-full">
@@ -145,24 +145,26 @@ const TestimonialsSlider = () => {
       >
         {displayTestimonials.map((item, idx) => (
           <SwiperSlide key={item.id + "-" + idx} className="pt-12">
-            <div className="bg-teal text-offwhite rounded-xl font-medium text-2xl p-12 min-h-[280px] flex flex-col gap-y-4 justify-between">
+            <div className="bg-teal text-offwhite rounded-xl font-medium text-2xl p-12 min-h-[280px] flex flex-col gap-y-5 justify-between">
               {/* Quote Icon */}
-              <Image
-                src={item.quoteIcon}
-                alt="Quote"
-                width={30}
-                height={30}
-                className="mb-4"
-              />
+              <div>
+                <Image
+                  src={item.quoteIcon}
+                  alt="Quote"
+                  width={30}
+                  height={30}
+                  className="mb-4"
+                />
 
-              {/* Quote Text */}
-              <p className="text-2xl text-offWhite italic !font-medium">
-                {item.quote}
-              </p>
+                {/* Quote Text */}
+                <p className="text-2xl text-sea-litest italic !font-medium">
+                  {item.quote}
+                </p>
+              </div>
 
               {/* Author Info */}
               <div className="mt-auto">
-                <p className="text-16  text-offWhite">
+                <p className="text-16  text-teal-lite">
                   {item.author} / {item.role}
                 </p>
                 <Image

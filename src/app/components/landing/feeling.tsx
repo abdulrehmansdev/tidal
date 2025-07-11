@@ -13,7 +13,7 @@ const FeelingHero = () => {
     >
       <div className="container flex flex-col lg:flex-row w-full py-24 gap-y-3">
         <div className="lg:w-2/5 ">
-          <h3 className="text-56 lg:text-64 text-offWhite pb-6 lg:py-0">
+          <h3 className="text-56 lg:text-64 text-offWhite pb-6 lg:py-0 lg:w-5/6">
             Making Films With Feeling
           </h3>
         </div>

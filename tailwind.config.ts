@@ -53,10 +53,12 @@ export default {
         "dark-blue": "#1C4062",
         "darker-blue": "#1C364F",
         teal: "#287F8C",
+        "teal-lite":"#CCD3C8",
         "darkest-blue": "#001F3B",
         "pale-blue": "#BDD5EA",
         "blue-green": "#328392",
         offWhite: "#F7F7FF",
+        "sea-litest":"#E6E9E4",
         "reddish-orange": "#FE5F55",
         "reddish-dark": "#b8463e",
 
