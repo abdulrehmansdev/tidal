@@ -11,7 +11,7 @@ const FeelingHero = () => {
         backgroundImage: "url('/public2/wave.svg')",
       }}
     >
-      <div className="container flex flex-col lg:flex-row w-full py-24 gap-y-3">
+      <div className="container mx-auto flex flex-col lg:flex-row w-full py-24 gap-y-3">
         <div className="lg:w-2/5 ">
           <h3 className="text-56 lg:text-64 text-offWhite pb-6 lg:py-0 lg:w-5/6">
             Making Films With Feeling

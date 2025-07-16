@@ -51,7 +51,7 @@ export default function Trusted() {
       className="w-full h-5/6 bg-cover bg-center bg-no-repeat mt-10"
       style={{ backgroundImage: "url('/public2/wave.svg')" }}
     >
-      <div className="container flex flex-col xl:flex-row justify-between xl:items-center w-full py-24 gap-y-14">
+      <div className="container mx-auto flex flex-col xl:flex-row justify-between xl:items-center w-full py-24 gap-y-14">
         {/* Left Content */}
         <div className="xl:w-2/4 flex flex-col gap-y-6">
           <h3 className="text-56 text-offWhite pb-6 lg:py-0">

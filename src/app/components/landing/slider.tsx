@@ -60,7 +60,7 @@ const TestimonialsSlider = () => {
   return (
     <div className="overflow-hidden py-24">
       {/* Header and Arrows */}
-      <div className="container flex flex-col lg:flex-row justify-between items-center gap-7 ">
+      <div className="container mx-auto flex flex-col lg:flex-row justify-between items-center gap-7 ">
         <h2 className="text-center lg:text-left  text-56 text-dark-blue">
           What Our Customers Say
         </h2>
