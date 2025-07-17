@@ -29,7 +29,7 @@ const Hero = () => {
       {/* Hero Image */}
       <div className="mt-10 rounded-[30px] overflow-hidden">
         <video
-          src="/public2/showreel.mp4"
+          src="/showreel.mp4"
           autoPlay
           loop
           muted

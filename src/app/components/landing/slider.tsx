@@ -72,14 +72,14 @@ const TestimonialsSlider = () => {
           >
             <span className="flex items-center justify-center h-full w-full">
               <Image
-                src="/public2/slider/left.svg"
+                src="/slider/left.svg"
                 alt="Left Arrow"
                 width={16}
                 height={12}
                 className="inline group-hover:hidden"
               />
               <Image
-                src="/public2/slider/lefts.svg"
+                src="/slider/lefts.svg"
                 alt="Left Arrow Hover"
                 width={16}
                 height={12}
@@ -95,14 +95,14 @@ const TestimonialsSlider = () => {
           >
             <span className="flex items-center justify-center h-full w-full">
               <Image
-                src="/public2/slider/right.svg"
+                src="/slider/right.svg"
                 alt="Right Arrow"
                 width={16}
                 height={12}
                 className="inline group-hover:hidden"
               />
               <Image
-                src="/public2/slider/rights.svg"
+                src="/slider/rights.svg"
                 alt="Right Arrow Hover"
                 width={16}
                 height={12}

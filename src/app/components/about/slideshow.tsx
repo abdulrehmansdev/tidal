@@ -4,39 +4,6 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { useTeam } from "../../services/teamService";
 
-// Custom Arrow Icons
-// const ChevronLeftIcon = ({ className }: { className?: string }) => (
-//   <svg
-//     className={className}
-//     fill="none"
-//     stroke="currentColor"
-//     viewBox="0 0 24 24"
-//   >
-//     <path
-//       strokeLinecap="round"
-//       strokeLinejoin="round"
-//       strokeWidth={2}
-//       d="M15 19l-7-7 7-7"
-//     />
-//   </svg>
-// );
-
-// const ChevronRightIcon = ({ className }: { className?: string }) => (
-//   <svg
-//     className={className}
-//     fill="none"
-//     stroke="currentColor"
-//     viewBox="0 0 24 24"
-//   >
-//     <path
-//       strokeLinecap="round"
-//       strokeLinejoin="round"
-//       strokeWidth={2}
-//       d="M9 5l7 7-7 7"
-//     />
-//   </svg>
-// );
-
 interface TeamMember {
   id: number;
   name: string;
@@ -81,7 +48,9 @@ const Slideshow = () => {
   if (error) {
     return (
       <section className="relative bg-slate-700 py-16 overflow-hidden flex items-center justify-center min-h-[300px]">
-        <span className="text-red-400 text-xl">Failed to load team data.</span>
+        <span className="text-reddish-orange text-xl">
+          Failed to load team data.
+        </span>
       </section>
     );
   }
@@ -100,74 +69,63 @@ const Slideshow = () => {
   };
 
   return (
-    <section className="relative bg-slate-700 py-16 overflow-hidden">
-      {/* Wave Background */}
-      <div className="absolute inset-0">
-        <Image
-          src="/wave-bg.jpg"
-          alt="Wave background"
-          fill
-          //   className="object-cover opacity-30"
-          priority
-        />
-        <div className="absolute inset-0 bg-slate-700/60"></div>
-      </div>
-
+    <section
+      className="w-full h-5/6 bg-cover bg-center bg-no-repeat py-24"
+      style={{ backgroundImage: "url('/wave.svg')" }}
+    >
       {/* Content */}
-      <div className="relative z-10  mx-auto px-6 lg:px-20">
+      <div className="relative z-10  mx-auto ">
         {/* Header */}
-        <div className="flex justify-between items-center mb-12">
-          <h2 className="font-[Montserrat] text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
+        <div className="flex flex-col md:flex-row justify-center md:justify-between items-center mb-12 gap-y-6 container mx-auto">
+          <h3 className="font-[Montserrat] text-56 text-offWhite">
             Meet The Team
-          </h2>
+          </h3>
 
-          {/* Navigation Arrows */}
-          {/* <div className="hidden md:flex space-x-2">
-            <button
-              onClick={prevSlide}
-              className="p-3 rounded-full border-2 border-white/30 text-white hover:border-white hover:bg-white/10 transition-all duration-300 cursor-pointer"
-              aria-label="Previous team members"
-            >
-              <ChevronLeftIcon className="w-6 h-6" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="p-3 rounded-full border-2 border-white/30 text-white hover:border-white/10 transition-all duration-300 cursor-pointer"
-              aria-label="Next team members"
-            >
-              <ChevronRightIcon className="w-6 h-6" />
-            </button>
-          </div> */}
-          <div className="hidden md:flex flex gap-4">
+          <div className="flex gap-4 ">
             <button
               // ref={prevRef}
               onClick={prevSlide}
-              className="w-15 h-15 border border-[#ffffff] rounded-full flex items-center justify-center hover:bg-[#1e2e45] hover:text-white transition text-[#1e2e45] cursor-pointer"
+              className="w-14 h-14 border border-offWhite group rounded-full flex items-center justify-center hover:border-reddish-orange hover:bg-reddish-orange cursor-pointer transition duration-500"
               aria-label="Previous testimonial"
             >
-              <span className="flex items-center justify-center h-full w-full text-3xl">
+              <span className="flex items-center justify-center h-full w-full">
                 <Image
                   src="/about/team/left.svg"
-                  alt="Logo"
+                  alt="Left Arrow"
                   width={16}
                   height={12}
-                  // className="mt-2"
+                  className="inline group-hover:hidden"
+                />
+                <Image
+                  src="/slider/lefts.svg"
+                  alt="Left Arrow Hover"
+                  width={16}
+                  height={12}
+                  className="hidden group-hover:inline"
                 />
               </span>
             </button>
+
             <button
               // ref={nextRef}
               onClick={nextSlide}
-              className="w-15 h-15 border border-[#ffffff] rounded-full flex items-center justify-center hover:bg-[#1e2e45] hover:text-white transition text-[#1e2e45] cursor-pointer"
+              className="w-14 h-14 border border-offWhite group rounded-full flex items-center justify-center hover:border-reddish-orange hover:bg-reddish-orange cursor-pointer transition duration-300"
               aria-label="Next testimonial"
             >
-              <span className="flex items-center justify-center h-full w-full text-3xl">
+              <span className="flex items-center justify-center h-full w-full">
                 <Image
                   src="/about/team/right.svg"
-                  alt="Logo"
+                  alt="Right Arrow"
                   width={16}
                   height={12}
-                  // className="mt-2"
+                  className="inline group-hover:hidden"
+                />
+                <Image
+                  src="/slider/rights.svg"
+                  alt="Right Arrow Hover"
+                  width={16}
+                  height={12}
+                  className="hidden group-hover:inline"
                 />
               </span>
             </button>
@@ -180,11 +138,11 @@ const Slideshow = () => {
             {getCurrentTeamMembers().map((member: TeamMember) => (
               <div
                 key={member.id}
-                className="bg-white rounded-2xl p-6 shadow-xl transform transition-all duration-300 hover:scale-105"
+                className="bg-white rounded-2xl p-6 shadow-xl"
               >
                 {/* Profile Image */}
-                <div className="flex justify-center mb-6">
-                  <div className="relative w-48 h-48 sm:w-72 sm:h-72 group transition-all duration-300">
+                <div className="flex justify-center mb-6 group">
+                  <div className="relative w-48 h-48 sm:w-72 sm:h-72 transition-all duration-300">
                     <div className="w-full h-full rounded-full bg-gray-200 overflow-hidden">
                       <img
                         src={
@@ -194,10 +152,10 @@ const Slideshow = () => {
                         }
                         alt={`${member.name} - ${member.title}`}
                         className="object-cover w-full h-full absolute inset-0 transition-all duration-300 group-hover:opacity-0"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).src =
-                            "/team/default-avatar.jpg";
-                        }}
+                        // onError={(e) => {
+                        //   (e.target as HTMLImageElement).src =
+                        //     "team/default-avatar.jpg";
+                        // }}
                         style={{ borderRadius: "50%" }}
                       />
                       <img
@@ -212,10 +170,10 @@ const Slideshow = () => {
                         className="object-cover w-full h-full absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
                         style={{ borderRadius: "50%" }}
                         aria-hidden="true"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).src =
-                            "/team/default-avatar.jpg";
-                        }}
+                        // onError={(e) => {
+                        //   (e.target as HTMLImageElement).src =
+                        //     "team/default-avatar.jpg";
+                        // }}
                       />
                     </div>
                   </div>
@@ -223,13 +181,13 @@ const Slideshow = () => {
 
                 {/* Member Info */}
                 <div className="text-center space-y-3">
-                  <h3 className="font-[Montserrat] text-2xl sm:text-2xl font-bold text-dark-blue">
+                  <h3 className="font-[Montserrat] text-22 text-dark-blue">
                     {member.name}
                   </h3>
-                  <h4 className="font-[Montserrat] text-[#287F8C] font-semibold text-lg sm:text-lg">
+                  <h4 className="font-[Montserrat] text-teal text-20 !mt-1">
                     {member.title}
                   </h4>
-                  <p className="leading-[50%] tracking-[-0.02em] font-[Montserrat] text-[#495867] text-base sm:text-base leading-relaxed">
+                  <p className="leading-tight tracking-tight font-[Montserrat] fonty-normal text-dark-gray text-sm !mt-1">
                     {member.description}
                   </p>
                 </div>
@@ -256,7 +214,7 @@ const Slideshow = () => {
           </div> */}
 
           {/* Slide Indicators */}
-          <div className="flex justify-center space-x-2 mt-8">
+          {/* <div className="flex justify-center space-x-2 mt-8">
             {Array.from({ length: totalSlides }).map((_, index) => (
               <button
                 key={index}
@@ -269,7 +227,7 @@ const Slideshow = () => {
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

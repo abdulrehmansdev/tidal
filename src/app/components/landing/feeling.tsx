@@ -8,7 +8,7 @@ const FeelingHero = () => {
     <section
       className="w-full h-5/6 bg-cover bg-center bg-no-repeat mt-10"
       style={{
-        backgroundImage: "url('/public2/wave.svg')",
+        backgroundImage: "url('/wave.svg')",
       }}
     >
       <div className="container mx-auto flex flex-col lg:flex-row w-full py-24 gap-y-3">

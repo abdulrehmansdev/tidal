@@ -7,7 +7,7 @@ const OurServicesSection = () => {
   return (
     <section
       className="w-full h-5/6 bg-cover bg-center bg-no-repeat mt-10"
-      style={{ backgroundImage: "url('/public2/wave.svg')" }}
+      style={{ backgroundImage: "url('/wave.svg')" }}
     >
       <div className="container mx-auto flex flex-col xl:flex-row justify-between xl:items-center w-full py-24 gap-y-14">
         {/* Left Content */}

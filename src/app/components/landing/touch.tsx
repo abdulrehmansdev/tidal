@@ -37,7 +37,7 @@ export default function Touch() {
         {/* Right: Image */}
         <div className="flex-1 relative min-h-[300px]">
           <video
-            src="/public2/camera.mp4"
+            src="/camera.mp4"
             autoPlay
             loop
             muted

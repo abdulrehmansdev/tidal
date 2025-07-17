@@ -3,31 +3,14 @@ import React from "react";
 
 const AboutTidal = () => {
   return (
-    <section className="">
-      {/* <div className=" container mx-auto">
-        <div className="flex flex-col lg:flex-row lg:gap-12 justify-between ">
-          <div className="space-y-6">
-            <h2 className="text-76 text-dark-blue">About Tidal Film</h2>
-            <div className="pt-4">
-              <button
-                className="btn-primary cursor-pointer w-32"
-                aria-label="Let’s Talk"
-              >
-                LET`S TALK
-              </button>
-            </div>
-          </div>
-          <div className="relative"></div>
-        </div>
-      </div> */}
-
-      <div className="container mx-auto flex flex-col lg:flex-row w-full py-24 gap-y-3 gap-x-10">
-        <div className="lg:w-2/5">
+    <section>
+      <div className="container mx-auto flex flex-col lg:flex-row w-full py-24 gap-10">
+        <div className="lg:w-3/6 xl:w-2/5  flex flex-col xl:justify-between">
           <h3 className="text-56 lg:text-64 text-dark-blue pb-6 lg:py-0 lg:w-5/6">
             About Tidal Film
           </h3>
 
-          <div className="flex flex-col justify-between h-full">
+          <div className="flex flex-col justify-between">
             <div className="flex flex-col gap-y-5 ">
               <p className=" text-20 text-dark-blue">
                 At Tidal Film, we're passionate about storytelling that
@@ -49,6 +32,7 @@ const AboutTidal = () => {
               </p>
             </div>
           </div>
+
           <div className="pt-4">
             <button
               className="btn-primary cursor-pointer w-32"
@@ -59,10 +43,10 @@ const AboutTidal = () => {
           </div>
         </div>
 
-        <div className="lg:w-3/5 flex flex-col">
+        <div className="lg:w-3/6 xl:w-3/5">
           <div className="relative overflow-hidden rounded-10xl shadow-2xl">
             <video
-              src="/public2/about/camera.mp4"
+              src="/about/camera.mp4"
               autoPlay
               loop
               muted

@@ -35,15 +35,15 @@ class ContentService {
         }
     }
 
-    async getAllContent(): Promise<Content[]> {
-        try {
-            const axios = this.getAxiosInstance();
-            const response = await axios.get<Content[]>('/content');
-            return response.data;
-        } catch (error) {
-            throw error;
-        }
-    }
+    // async getAllContent(): Promise<Content[]> {
+    //     try {
+    //         const axios = this.getAxiosInstance();
+    //         const response = await axios.get<Content[]>('/content');
+    //         return response.data;
+    //     } catch (error) {
+    //         throw error;
+    //     }
+    // }
 }
 
 export const contentService = new ContentService();

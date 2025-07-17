@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Production() {
   return (
-    <div className="bg-[#f7f8fa]  py-8 px-6 md:px-20 flex flex-col items-center pt-10">
+    <div className="container mx-auto mt-20">
       <div className="w-full  mx-auto">
         <div className="md:flex md:items-end md:justify-between">
           <div>

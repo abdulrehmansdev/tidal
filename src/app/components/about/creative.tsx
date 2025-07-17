@@ -2,19 +2,19 @@ import Image from "next/image";
 
 export default function Creative() {
   return (
-    <section className="bg-[#f6f7fc]  py-10 px-6 md:px-20">
-      <div className="mx-auto">
-        <h2 className="font-[Montserrat] text-4xl md:text-6xl font-bold text-[#2d3a4a] mt-4 mb-16">
+    <section className=" ">
+      <div className="container mx-auto mt-20">
+        <h2 className="font-[Montserrat] text-56 text-dark-blue mb-16">
           Our Creative Process
         </h2>
-        <div className="md:flex md:items-end md:justify-between">
-          <div>
-            <h3 className="font-[Montserrat] text-3xl md:text-6xl font-bold text-[#2d3a4a] mb-2">
+        <div className="lg:flex lg:items-end lg:justify-between ">
+          <div className="">
+            <h3 className="font-[Montserrat] text-dark-blue text-56 lg:text-64">
               An Idea
             </h3>
-            <div className="h-2 w-full bg-[#ff6b6b] mb-4" />
+            <div className="h-2 w-52 bg-reddish-orange" />
           </div>
-          <p className=" font-[Montserrat] leading-tight tracking-[-0.02em] md:w-2/3 text-[#2d3a4a] text-base md:text-xl font-normal leading-relaxed mb-8 md:mb-0">
+          <p className=" font-[Montserrat] text-20 text-dark-blue md:w-3/5">
             Every project begins with a spark—your idea. Whether big or small,
             it’s the foundation of your creative journey. At Tidal Film, we take
             the time to understand your organisation, your goals, and the story

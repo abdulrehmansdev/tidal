@@ -1,9 +1,9 @@
 // axiosConfig.ts
 import axios from 'axios';
-import { authService } from './authService';
+
 
 const instance = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_API_URL,
+    baseURL:'http://localhost:3003/api',
     withCredentials: true
 });
 
@@ -25,74 +25,74 @@ const processQueue = (error: any | null) => {
 };
 
 // Add a request interceptor
-instance.interceptors.request.use(
-    (config) => {
-        // @ts-ignore
-        if (!config.headers.Authorization) {
-            const token = authService.getAccessToken();
-            if (token) {
-                // @ts-ignore
-                config.headers.Authorization = `Bearer ${token}`;
-            }
-        }
-        return config;
-    },
-    (error) => {
-        return Promise.reject(error);
-    }
-);
+// instance.interceptors.request.use(
+//     (config) => {
+//         // @ts-ignore
+//         if (!config.headers.Authorization) {
+//             const token = authService.getAccessToken();
+//             if (token) {
+//                 // @ts-ignore
+//                 config.headers.Authorization = `Bearer ${token}`;
+//             }
+//         }
+//         return config;
+//     },
+//     (error) => {
+//         return Promise.reject(error);
+//     }
+// );
 
 // Add a response interceptor
-instance.interceptors.response.use(
-    (response) => response,
-    async (error) => {
-        const originalRequest = error.config;
+// instance.interceptors.response.use(
+//     (response) => response,
+//     async (error) => {
+//         const originalRequest = error.config;
 
-        // If the error is not 401 or we've already tried to refresh, reject
-        if (error.response?.status !== 401 || originalRequest._retry) {
-            return Promise.reject(error);
-        }
+//         // If the error is not 401 or we've already tried to refresh, reject
+//         if (error.response?.status !== 401 || originalRequest._retry) {
+//             return Promise.reject(error);
+//         }
 
-        // If we're not logged in at all, reject immediately
-        if (!authService.getAccessToken() || !authService.getRefreshToken()) {
-            return Promise.reject(error);
-        }
+//         // If we're not logged in at all, reject immediately
+//         // if (!authService.getAccessToken() || !authService.getRefreshToken()) {
+//         //     return Promise.reject(error);
+//         // }
 
-        if (isRefreshing) {
-            return new Promise((resolve, reject) => {
-                failedQueue.push({ resolve, reject });
-            })
-                .then(() => {
-                    return instance(originalRequest);
-                })
-                .catch((err) => {
-                    return Promise.reject(err);
-                });
-        }
+//         if (isRefreshing) {
+//             return new Promise((resolve, reject) => {
+//                 failedQueue.push({ resolve, reject });
+//             })
+//                 .then(() => {
+//                     return instance(originalRequest);
+//                 })
+//                 .catch((err) => {
+//                     return Promise.reject(err);
+//                 });
+//         }
 
-        originalRequest._retry = true;
-        isRefreshing = true;
+//         originalRequest._retry = true;
+//         isRefreshing = true;
 
-        try {
-            await authService.refreshToken();
-            const token = authService.getAccessToken();
-            if (token) {
-                originalRequest.headers.Authorization = `Bearer ${token}`;
-            }
-            processQueue(null);
-            return instance(originalRequest);
-        } catch (refreshError) {
-            processQueue(refreshError);
-            authService.clearTokens();
-            if (typeof window !== 'undefined') {
-                window.location.href = '/login';
-            }
-            return Promise.reject(refreshError);
-        } finally {
-            isRefreshing = false;
-        }
-    }
-);
+//         try {
+//             await authService.refreshToken();
+//             const token = authService.getAccessToken();
+//             if (token) {
+//                 originalRequest.headers.Authorization = `Bearer ${token}`;
+//             }
+//             processQueue(null);
+//             return instance(originalRequest);
+//         } catch (refreshError) {
+//             processQueue(refreshError);
+//             authService.clearTokens();
+//             if (typeof window !== 'undefined') {
+//                 window.location.href = '/login';
+//             }
+//             return Promise.reject(refreshError);
+//         } finally {
+//             isRefreshing = false;
+//         }
+//     }
+// );
 
 
 // Add request logging in development
