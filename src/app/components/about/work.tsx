@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useWork } from "@/services/workService";
+import { useWork } from "../../services/workService";
 
 const WorkShowcase = () => {
   const { data: workData, isLoading, error } = useWork();
