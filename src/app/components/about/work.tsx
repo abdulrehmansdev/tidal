@@ -43,7 +43,7 @@ const WorkShowcase = () => {
       <div className="max-w-5/6 mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
-          <h2 className="text-3xl md:text-4xl font-semibold text-[#1C4062]">
+          <h2 className="text-3xl md:text-4xl font-semibold text-dark-blue">
             Our Work
           </h2>
           <button

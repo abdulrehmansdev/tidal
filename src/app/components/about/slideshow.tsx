@@ -223,7 +223,7 @@ const Slideshow = () => {
 
                 {/* Member Info */}
                 <div className="text-center space-y-3">
-                  <h3 className="font-[Montserrat] text-2xl sm:text-2xl font-bold text-[#1C4062]">
+                  <h3 className="font-[Montserrat] text-2xl sm:text-2xl font-bold text-dark-blue">
                     {member.name}
                   </h3>
                   <h4 className="font-[Montserrat] text-[#287F8C] font-semibold text-lg sm:text-lg">

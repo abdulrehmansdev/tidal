@@ -120,27 +120,17 @@ export default {
         "21": "86px",
         "22": "88px",
       },
-      padding: {
-        normal: "1.5rem",
-        lg: "3rem",
-      },
       container: {
-        // center: true,
         padding: {
           DEFAULT: "1.5rem",
           lg: "3rem",
           '3xl':'0rem'
         },
-        // screens: {
-        //   sm: "640px",
-        //   md: "768px",
-        //   lg: "1024px",
-        //   xl: "1280px",
-        //   "2xl": "1440px",
-        // },
+
       },
       borderRadius: {
         "26": "26px",
+        "10xl": "40px",
       },
       borderWidth: {
         "1.5": "1.5px",
