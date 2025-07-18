@@ -48,11 +48,11 @@ export async function getNavigationWithServiceSubmenu(): Promise<NavItem[]> {
 
         if (servicesItem) {
             // Fetch all content
-            const allContent = await contentService.getAllContent();
+            // const allContent = await contentService.getAllContent();
 
             // Filter for service content
             // Adjust the filtering logic based on your content structure
-            const serviceContent = allContent.slice(0, 10);
+            // const serviceContent = allContent.slice(0, 10);
             
             //     .filter(content =>
             //     // You might need to adjust these conditions based on your data
@@ -61,10 +61,10 @@ export async function getNavigationWithServiceSubmenu(): Promise<NavItem[]> {
             // );
 
             // Map to NavItem format
-            servicesItem.submenu = serviceContent.map(service => ({
-                href: `/services/${service.slug.replace('services/', '')}`,
-                text: service.name,
-            }));
+            // servicesItem.submenu = serviceContent.map(service => ({
+            //     href: `/services/${service.slug.replace('services/', '')}`,
+            //     text: service.name,
+            // }));
         }
 
         return navigation;

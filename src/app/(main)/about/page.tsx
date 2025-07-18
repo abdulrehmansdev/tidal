@@ -1,27 +1,25 @@
+import AboutTidal from "../../components/about/abouttidal";
 import Creative from "../../components/about/creative";
 import PostProduction from "../../components/about/post";
 import Production from "../../components/about/production";
-import FeelingHero from "../../components/landing/feeling";
+import Slideshow from "../../components/about/slideshow";
 import TestimonialsSlider from "../../components/landing/slider";
-import Trusted from "../../components/landing/trusted";
-import OurServices from "../../components/services/ourService";
-import SelectAService from "../../components/services/SelectAService";
 import Touch from "../../components/landing/touch";
+import Trusted from "../../components/landing/trusted";
 import WorkSlider from "../../components/services/WorkSlider";
 
-export default function ServicePage() {
+export default function Home() {
   return (
-    <>
-      <OurServices />
-      <SelectAService />
+    <div className="bg-[#f6f6fd]">
+      <AboutTidal />
+      <Slideshow />
       <Creative />
       <Production />
       <PostProduction />
       <WorkSlider />
-      <FeelingHero />
       <TestimonialsSlider />
       <Trusted />
       <Touch />
-    </>
+    </div>
   );
 }

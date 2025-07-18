@@ -3,7 +3,7 @@ import { FilledButton, UnFilledButton } from "./button";
 
 export default function Touch() {
   return (
-    <div className="container my-16">
+    <div className="container mx-auto my-16">
       <div className="bg-teal rounded-2xl flex flex-col lg:flex-row w-full overflow-hidden shadow-lg">
         {/* Left: Text Content */}
         <div className="flex-1 p-6 md:p-12 gap-y-4 flex flex-col justify-center">
@@ -37,7 +37,7 @@ export default function Touch() {
         {/* Right: Image */}
         <div className="flex-1 relative min-h-[300px]">
           <video
-            src="/public2/camera.mp4"
+            src="/camera.mp4"
             autoPlay
             loop
             muted

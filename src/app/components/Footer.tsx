@@ -5,13 +5,13 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-darkest-blue  text-offWhite font-montserrat">
-      <div className="w-full py-12 container">
+      <div className="w-full py-12 container mx-auto">
         <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-5 gap-8">
           {/* Logo & Description */}
           <div className="flex flex-col justify-between h-56 col-span-1 lg:col-span-2">
             <div className="flex ">
               <Image
-                src="/public2/tidal-light.svg"
+                src="/tidal-light.svg"
                 alt="Tidal Film Logo"
                 width={174}
                 height={70}
@@ -28,7 +28,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
               >
                 <Image
-                  src="/public2/social/x.svg"
+                  src="/social/x.svg"
                   alt="X"
                   width={24}
                   height={24}
@@ -40,7 +40,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
               >
                 <Image
-                  src="/public2/social/insta.svg"
+                  src="/social/insta.svg"
                   alt="Instagram"
                   width={24}
                   height={24}
@@ -52,7 +52,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
               >
                 <Image
-                  src="/public2/social/youtube.svg"
+                  src="/social/youtube.svg"
                   alt="YouTube"
                   width={24}
                   height={24}
@@ -64,7 +64,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
               >
                 <Image
-                  src="/public2/social/linkedin.svg"
+                  src="/social/linkedin.svg"
                   alt="LinkedIn"
                   width={24}
                   height={24}

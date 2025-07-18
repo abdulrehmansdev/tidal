@@ -1,0 +1,23 @@
+import WorkSlider from "../../../components/services/WorkSlider";
+import Brief from "../../../components/work/brief";
+import PostProduction from "../../../components/work/brief-deprecated";
+import Concept from "../../../components/work/concept";
+import Production from "../../../components/work/concept";
+import Outcomes from "../../../components/work/Outcomes";
+import WorkDetail from "../../../components/work/WorkDetail";
+
+interface WorkDetailPageProps {
+  params: { id: string };
+}
+
+export default function WorkDetailPage({ params }: WorkDetailPageProps) {
+  return (
+    <div className="bg-[#f5f7ff] min-h-screen py-12 flex flex-col items-center">
+      <WorkDetail id={params.id} />
+      <Brief />
+      <Concept />
+      <Outcomes />
+      <WorkSlider />
+    </div>
+  );
+}

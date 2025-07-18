@@ -53,12 +53,12 @@ export default {
         "dark-blue": "#1C4062",
         "darker-blue": "#1C364F",
         teal: "#287F8C",
-        "teal-lite":"#CCD3C8",
+        "teal-lite": "#CCD3C8",
         "darkest-blue": "#001F3B",
         "pale-blue": "#BDD5EA",
         "blue-green": "#328392",
         offWhite: "#F7F7FF",
-        "sea-litest":"#E6E9E4",
+        "sea-litest": "#E6E9E4",
         "reddish-orange": "#FE5F55",
         "reddish-dark": "#b8463e",
 
@@ -121,22 +121,16 @@ export default {
         "22": "88px",
       },
       container: {
-        center: true,
         padding: {
           DEFAULT: "1.5rem",
           lg: "3rem",
           '3xl':'0rem'
         },
-        screens: {
-          sm: "640px",
-          md: "768px",
-          lg: "1024px",
-          xl: "1280px",
-          "2xl": "1440px",
-        },
+
       },
       borderRadius: {
         "26": "26px",
+        "10xl": "40px",
       },
       borderWidth: {
         "1.5": "1.5px",

@@ -4,7 +4,7 @@ import { FilledButton } from "./button";
 
 const Hero = () => {
   return (
-    <div className="container mt-10">
+    <div className="container mx-auto mt-10">
       <div className="flex flex-col lg:flex-row justify-between gap-y-8 lg:gap-y-3 items-center md:items-end">
         <h1 className="text-56 xl:text-76 text-dark-blue">
           A Different Kind Of Video Production Agency
@@ -29,7 +29,7 @@ const Hero = () => {
       {/* Hero Image */}
       <div className="mt-10 rounded-[30px] overflow-hidden">
         <video
-          src="/public2/showreel.mp4"
+          src="/showreel.mp4"
           autoPlay
           loop
           muted

@@ -49,9 +49,9 @@ export default function Trusted() {
 
     <section
       className="w-full h-5/6 bg-cover bg-center bg-no-repeat mt-10"
-      style={{ backgroundImage: "url('/public2/wave.svg')" }}
+      style={{ backgroundImage: "url('/wave.svg')" }}
     >
-      <div className="container flex flex-col xl:flex-row justify-between xl:items-center w-full py-24 gap-y-14">
+      <div className="container mx-auto flex flex-col xl:flex-row justify-between xl:items-center w-full py-24 gap-y-14">
         {/* Left Content */}
         <div className="xl:w-2/4 flex flex-col gap-y-6">
           <h3 className="text-56 text-offWhite pb-6 lg:py-0">
@@ -76,7 +76,7 @@ export default function Trusted() {
         <div className="w-full md:w-1/2 flex justify-center mt-12 md:mt-0">
           <div className="relative w-[340px] h-[220px] sm:w-[420px] sm:h-[270px] md:w-[600px] md:h-[420px]">
             <Image
-              src="/public2/logos.svg"
+              src="/logos.svg"
               alt="Brand Logos"
               fill
               className="object-contain"

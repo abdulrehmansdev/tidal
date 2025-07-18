@@ -42,7 +42,7 @@ const ClientHeader = ({ initialNavigation }: ClientHeaderProps) => {
           <Link href="/" className="flex items-center gap-2 group">
             <span className="relative w-[146px] h-[58px] block">
               <Image
-                src="/public2/logo2.svg"
+                src="/logo2.svg"
                 alt="Tidal Film Logo"
                 width={146}
                 height={58}
@@ -50,7 +50,7 @@ const ClientHeader = ({ initialNavigation }: ClientHeaderProps) => {
                 priority
               />
               <Image
-                src="/public2/color-logo2.svg"
+                src="/color-logo2.svg"
                 alt="Tidal Film Color Logo"
                 width={146}
                 height={58}
