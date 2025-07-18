@@ -39,14 +39,13 @@ export default function NewsPage() {
 
   return (
     <>
-      <div className="bg-[#f7f8fa] min-h-screen py-10 px-6 md:px-20 relative">
-        <div className="mx-auto">
-          <h1 className="font-[montserrat] text-4xl md:text-5xl font-extrabold text-[#23456a] mb-6">
+        <div className="container mx-auto mt-20">
+          <h1 className="font-[montserrat] text-76 text-dark-blue">
             Our Latest News
           </h1>
-          <div className="flex flex-wrap gap-2 mb-8 items-center">
-            <span className="text-[#23456a] font-medium mr-2">
-              Filter by <span className="text-[#FE5F55]">---</span>
+          <div className="flex flex-wrap gap-2 items-center my-10">
+            <span className="text-dark-blue font-medium mr-2">
+              Filter by <span className="text-reddish-orange">---</span>
             </span>
             {categories.map((cat) => (
               <button
@@ -57,8 +56,8 @@ export default function NewsPage() {
                 }}
                 className={`px-5 py-2 rounded-full border font-[montserrat] text-sm font-semibold transition-all duration-150 cursor-pointer ${
                   activeCategory === cat
-                    ? "bg-[#ff4b5c] text-white border-[#ff4b5c]"
-                    : "bg-white text-[#23456a] border-[#d1d5db] hover:bg-[#ff4b5c] hover:text-white hover:border-[#ff4b5c]"
+                    ? "bg-reddish-dark text-white border-reddish-dark"
+                    : "bg-white text-dark-blue border-dark-blue hover:bg-reddish-dark hover:text-white hover:border-reddish-dark"
                 }`}
                 aria-label={`Filter news by ${cat}`}
               >
@@ -68,7 +67,7 @@ export default function NewsPage() {
           </div>
 
           {isLoading ? (
-            <div className="text-center py-12 text-lg text-[#23456a]">
+            <div className="text-center py-12 text-lg text-dark-blue">
               Loading...
             </div>
           ) : error ? (
@@ -79,7 +78,7 @@ export default function NewsPage() {
             </div>
           ) : (
             <>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
                 {paginatedNews.map((item) => (
                   <div
                     key={item.id}
@@ -95,18 +94,18 @@ export default function NewsPage() {
                         className="w-full object-cover rounded-2xl"
                       />
                       <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-                      <span className="absolute top-3 right-3 bg-[#ff4b5c] text-white text-xs font-semibold px-4 py-1 rounded-full z-10">
-                        {item.category}
+                      <span className="absolute top-2 right-2 bg-reddish-orange text-offwhite text-xs font-normal text-offWhite px-2 py-1 rounded-full z-10 leading-tight">
+                        {item.category}ss
                       </span>
                     </div>
                     <div className="p-5 flex flex-col flex-1 items-start text-left">
-                      <span className="text-xs text-[#23456a] mb-2">
+                      <span className="text-16 text-dark-blue mb-2">
                         {item.date}
                       </span>
-                      <h3 className="text-lg font-bold text-[#23456a] mb-2 leading-snug">
+                      <h3 className="text-22 font-bold text-dark-blue mb-2 ">
                         {item.title}
                       </h3>
-                      <p className="text-sm text-[#23456a] opacity-80 mb-2 flex-1 truncate">
+                      <p className="text-20 text-darker-blue ">
                         {item.description}
                       </p>
                     </div>
@@ -120,10 +119,10 @@ export default function NewsPage() {
                     <button
                       key={idx + 1}
                       onClick={() => handlePageChange(idx + 1)}
-                      className={`w-10 h-10 rounded-lg border border-[#23456a] flex items-center justify-center text-[#23456a] font-semibold text-base transition-all duration-200 ${
+                      className={`w-10 h-10 rounded-lg border border-dark-blue flex items-center justify-center text-dark-blue font-semibold text-base transition-all duration-200 ${
                         currentPage === idx + 1
-                          ? "bg-[#e6eae6] text-[#23456a] border-[#e6eae6]"
-                          : "bg-white hover:bg-[#23456a] hover:text-white"
+                          ? "bg-[#e6eae6] text-dark-blue border-[#e6eae6]"
+                          : "bg-white hover:bg-dark-blue hover:text-white"
                       }`}
                       aria-label={`Go to page ${idx + 1}`}
                     >
@@ -135,8 +134,8 @@ export default function NewsPage() {
                     disabled={currentPage === totalPages}
                     className={`w-10 h-10 rounded-lg flex items-center justify-center text-white font-semibold text-base transition-all duration-200 ${
                       currentPage === totalPages
-                        ? "bg-[#23456a]/30 cursor-not-allowed"
-                        : "bg-[#23456a] hover:bg-[#1a2343]"
+                        ? "bg-dark-blue/30 cursor-not-allowed"
+                        : "bg-dark-blue hover:bg-[#1a2343]"
                     }`}
                     aria-label="Next page"
                   >
@@ -147,7 +146,7 @@ export default function NewsPage() {
             </>
           )}
         </div>
-      </div>
+    
       <Touch />
     </>
   );
