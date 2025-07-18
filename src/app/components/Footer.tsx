@@ -157,7 +157,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="w-full py-5 flex flex-col lg:flex-row justify-between text-16 gap-8 container">
+      <div className="w-full py-5 flex flex-col lg:flex-row justify-between text-16 gap-8 container mx-auto">
         <div className="flex flex-col lg:flex-row gap-4">
           <div>2025 © Tidal Film. Company Number: 06701707</div>
           <div>
