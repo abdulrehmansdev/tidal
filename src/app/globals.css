@@ -49,6 +49,12 @@ a {
     @apply text-2xl font-semibold leading-tight tracking-tight;
   }
 
+
+  .text-36 {
+    @apply text-4xl font-semibold leading-tight tracking-tight;
+  }
+
+
   .text-56 {
     @apply text-5.5xl font-semibold tracking-tight leading-16;
   }

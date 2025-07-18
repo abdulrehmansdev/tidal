@@ -15,11 +15,11 @@ const SelectAService = () => {
     >
       <div className="flex justify-center items-center w-full">
         <div
-          className="bg-white text-[#0b2e4a] p-8 md:p-12 rounded-xl shadow-lg flex flex-col justify-center items-center w-full max-w-3xl"
+          className="bg-offWhite p-8 md:p-12 rounded-xl shadow-lg flex flex-col justify-center items-center w-full max-w-3xl"
           style={{ minWidth: "320px" }}
         >
           <h3
-            className="text-lg md:text-4xl font-medium mb-6 w-full text-left border-b-2 border-red-500 pb-2"
+            className="text-36 text-dark-blue mb-6 w-full text-left border-b-2 border-reddish-orange pb-2"
             style={{ borderBottomWidth: "2px" }}
           >
             Select a Service
@@ -54,7 +54,7 @@ const SelectAService = () => {
                     className="absolute left-0 top-1/2 -translate-y-1/2 h-6 w-1 rounded bg-[#ff645a] opacity-0 group-hover:opacity-100 group-hover:h-7 transition-all duration-500"
                     aria-hidden="true"
                   />
-                  <span className="font-[Montserrat] font-semibold pl-4 group-hover:text-[#001F3B] transition-colors duration-300 font-semibold">
+                  <span className="font-[Montserrat] pl-4 group-hover:text-darkest-blue text-22 transition-colors duration-300">
                     {service.title}
                   </span>
                 </div>
