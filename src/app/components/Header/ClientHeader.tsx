@@ -33,7 +33,7 @@ const ClientHeader = ({ initialNavigation }: ClientHeaderProps) => {
   return (
     <>
       <header
-        className={`bg-offWhite sticky top-0 w-full flex items-center z-10 ${
+        className={`bg-offWhite sticky top-0 w-full flex items-center z-50 ${
           styles.header
         } ${!isHydrated ? styles.preHydration : ""}`}
       >
