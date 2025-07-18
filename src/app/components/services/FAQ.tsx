@@ -57,48 +57,46 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="w-full bg-[#f7f8fa] py-16 px-2 px-6 md:px-20 flex">
-      <div className="w-full  mx-auto flex flex-col md:flex-row gap-8 mb-8">
-        {/* Left: Heading */}
-        <div className="flex-1 min-w-[320px] flex items-start">
-          <h2 className="font-[montserrat] text-3xl md:text-6xl font-extrabold text-[#23456a] leading-tight">
-            Frequently Asked
-            <br />
-            Questions
-          </h2>
-        </div>
-        {/* Right: Accordion */}
-        <div className="font-[montserrat] flex-1 max-w-3xl w-full">
-          {faqs.map((faq, idx) => (
-            <div key={faq.question} className="border-b border-gray-300 py-4">
-              <button
-                className="w-full flex justify-between items-center text-left text-[#23456a] font-semibold text-lg md:text-xl focus:outline-none cursor-pointer"
-                aria-label={`Toggle FAQ: ${faq.question}`}
-                onClick={() => setOpenIndex(idx === openIndex ? -1 : idx)}
-              >
-                <span>{faq.question}</span>
-                {openIndex === idx ? (
-                  <img
-                    src="/services/minus.svg"
-                    alt="Collapse"
-                    className="ml-4 w-6 h-6 transition-transform duration-200"
-                  />
-                ) : (
-                  <img
-                    src="/services/plus.svg"
-                    alt="Expand"
-                    className="ml-4 w-6 h-6 transition-transform duration-200"
-                  />
-                )}
-              </button>
-              {openIndex === idx && (
-                <div className="mt-4 text-[#23456a] text-base md:text-lg animate-fade-in">
-                  {faq.answer}
-                </div>
+    <section className="container mx-auto py-8 lg:py-16 flex flex-col md:flex-row gap-8 mb-8">
+      {/* Left: Heading */}
+      <div className="flex-1 min-w-[320px] flex items-start">
+        <h2 className="font-[montserrat] text-3xl md:text-6xl font-extrabold text-[#23456a] leading-tight">
+          Frequently Asked
+          <br />
+          Questions
+        </h2>
+      </div>
+      {/* Right: Accordion */}
+      <div className="font-[montserrat] flex-1 max-w-3xl w-full">
+        {faqs.map((faq, idx) => (
+          <div key={faq.question} className="border-b border-gray-300 py-4">
+            <button
+              className="w-full flex justify-between items-center text-left text-[#23456a] font-semibold text-lg md:text-xl focus:outline-none cursor-pointer"
+              aria-label={`Toggle FAQ: ${faq.question}`}
+              onClick={() => setOpenIndex(idx === openIndex ? -1 : idx)}
+            >
+              <span>{faq.question}</span>
+              {openIndex === idx ? (
+                <img
+                  src="/services/minus.svg"
+                  alt="Collapse"
+                  className="ml-4 w-6 h-6 transition-transform duration-200"
+                />
+              ) : (
+                <img
+                  src="/services/plus.svg"
+                  alt="Expand"
+                  className="ml-4 w-6 h-6 transition-transform duration-200"
+                />
               )}
-            </div>
-          ))}
-        </div>
+            </button>
+            {openIndex === idx && (
+              <div className="mt-4 text-[#23456a] text-base md:text-lg animate-fade-in">
+                {faq.answer}
+              </div>
+            )}
+          </div>
+        ))}
       </div>
       <style jsx>{`
         @keyframes fade-in {

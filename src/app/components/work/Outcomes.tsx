@@ -3,16 +3,15 @@ import Image from "next/image";
 
 const Outcomes = () => {
   return (
-    <section className="w-full bg-[#f7f8fa] py-12 px-6 md:px-20">
-      <div className="mx-auto">
+    <section className="container mx-auto py-6 lg:py-12">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between w-full">
           <div className="flex-1 min-w-[260px] lg:max-w-[420px] lg:mr-8">
-            <h1 className="font-[Montserrat] leading-tight text-4xl md:text-6xl font-bold text-[#1C4062] mb-2 leading-tight">
-              <span className="block border-b-6 border-[#ff6b6b] pb-1 mb-2 inline-block w-fit">
+            <h1 className="font-[Montserrat] leading-tight text-4xl md:text-6xl font-bold text-dark-blue leading-tight">
+              <span className="block border-b-8 border-reddish-orange pb-1 mb-2 inline-block w-fit">
                 The
               </span>
               <br />
-              <span className="block border-b-6 border-[#ff6b6b] pb-1 mb-2 inline-block w-fit">
+              <span className="block border-b-8 border-reddish-orange pb-1 mb-2 inline-block w-fit">
                 Outcome
               </span>
             </h1>
@@ -68,7 +67,6 @@ const Outcomes = () => {
               className="w-full h-full object-cover"
             />
           </div>
-        </div>
       </div>
     </section>
   );

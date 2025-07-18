@@ -30,7 +30,7 @@ const Card = ({
           alt={title}
           width={400}
           height={300}
-          className="rounded-xl object-cover w-full h-[200px] sm:h-[250px] lg:h-auto transition-all duration-300 group-hover:scale-105"
+          className="rounded-xl object-cover w-full h-[200px] sm:h-[250px] lg:h-[350px] transition-all duration-300 group-hover:scale-105"
         />
 
         {/* Dark overlay on hover */}

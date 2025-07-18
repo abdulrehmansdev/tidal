@@ -3,26 +3,25 @@ import Image from "next/image";
 
 export default function Concept() {
   return (
-    <div className="bg-[#f7f8fa] min-h-screen py-8 px-6 md:px-20 flex flex-col items-center">
-      <div className="w-full  mx-auto">
+    <div className="container mx-auto py-6 lg:py-12">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between w-full">
           <div className="flex-1 min-w-[260px] lg:max-w-[420px] lg:mr-8">
-            <h1 className="font-[Montserrat] leading-tight text-4xl md:text-6xl font-bold text-[#1C4062] mb-2 leading-tight">
-              <span className="block border-b-6 border-[#ff6b6b] pb-1 mb-2 inline-block w-fit">
+            <h1 className="font-[Montserrat] leading-tight text-4xl md:text-6xl font-bold text-dark-blue mb-2 leading-tight">
+              <span className="block border-b-8 border-reddish-orange pb-1 mb-2 inline-block w-fit">
                 Concept,
               </span>
               <br />
-              <span className="block border-b-6 border-[#ff6b6b] pb-1 mb-2 inline-block w-fit">
+              <span className="block border-b-8 border-reddish-orange pb-1 mb-2 inline-block w-fit">
                 Production
               </span>
               <br />
-              <span className="block border-b-6 border-[#ff6b6b] pb-1 mb-2 inline-block w-fit">
+              <span className="block border-b-8 border-reddish-orange pb-1 mb-2 inline-block w-fit">
                 & Delivery
               </span>
             </h1>
           </div>
           <div className="flex-1 lg:mt-0 mt-2">
-            <p className=" font-[Montserrat]  text-[#22305a] leading-tight text-base md:text-lg ">
+            <p className=" font-[Montserrat] text-dark-blue leading-tight text-base md:text-lg ">
               We worked closely with the team at Capstone who had the expertise
               and knowledge of what would resonate well with their target
               audience. Building on their initial title for the campaign ‘You
@@ -49,17 +48,15 @@ export default function Concept() {
             style={{ maxHeight: "70vh" }}
           >
             <Image
-              // src={work.concept}
               src="/about/creative/production.png"
               alt="Production filming crew"
               width={1920}
               height={1080}
-              className="w-full h-[50vw] max-h-[70vh] object-cover object-center"
+              className="w-full object-cover object-center"
               priority
             />
           </div>
         </div>
-      </div>
     </div>
   );
 }

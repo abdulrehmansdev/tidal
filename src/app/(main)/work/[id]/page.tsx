@@ -12,8 +12,8 @@ interface WorkDetailPageProps {
 
 export default function WorkDetailPage({ params }: WorkDetailPageProps) {
   return (
-    <div className="bg-[#f5f7ff] min-h-screen py-12 flex flex-col items-center">
-      <WorkDetail id={params.id} />
+    <div className="bg-offWhite min-h-screen py-12">
+      <WorkDetail id={params?.id} />
       <Brief />
       <Concept />
       <Outcomes />
