@@ -17,7 +17,7 @@ export default function ServicePage() {
       <Creative />
       <Production />
       <PostProduction />
-      <WorkSlider />
+      <WorkSlider visibleCount={3} />
       <FeelingHero />
       <TestimonialsSlider />
       <Trusted />
