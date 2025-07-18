@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useWork } from "../../services/workService";
+import Card from "../card";
 
 const FILTERS = [
   "Show All",
@@ -114,21 +115,20 @@ export default function WorkPortfolio() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-8 items-center">
+        {/* Responsive 2-3-2-3 pattern, 1 per row on small screens */}
+        <div className="flex flex-col gap-8 items-center w-full">
           {rows.map((row, rowIdx) => (
             <div
               key={rowIdx}
-              className={`flex gap-8 w-full justify-center ${
-                row.length === 2 ? "" : "flex-wrap"
-              }`}
+              className={`flex flex-col md:flex-row gap-8 w-full justify-center`}
             >
-              {row.map((item, idx) => (
+              {row.map((item) => (
                 <div
                   key={item.id}
-                  className={`bg-white rounded-xl shadow-md overflow-hidden flex flex-col cursor-pointer transition-transform hover:scale-[1.03] ${
+                  className={`group rounded-xl overflow-hidden cursor-pointer w-full md:flex-1 ${
                     row.length === 2
-                      ? "flex-1 min-w-[340px] max-w-[600px] h-[420px]"
-                      : "flex-1 min-w-[260px] max-w-[420px] h-[340px]"
+                      ? 'min-w-[340px] max-w-[600px]'
+                      : 'min-w-[260px] max-w-[420px]'
                   }`}
                   style={
                     row.length === 2
@@ -144,7 +144,13 @@ export default function WorkPortfolio() {
                       router.push(`/work/${item.id}`);
                   }}
                 >
-                  <img
+                  <Card
+                    image={item.image}
+                    title={item.title}
+                    category={item.category}
+                    spanColor="bg-reddish-orange"
+                  />
+                  {/* <img
                     src={item.image}
                     alt={item.title}
                     className={`w-full ${
@@ -158,7 +164,7 @@ export default function WorkPortfolio() {
                       </h2>
                       <p className="text-sm text-[#6b7280]">{item.category}</p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               ))}
             </div>
