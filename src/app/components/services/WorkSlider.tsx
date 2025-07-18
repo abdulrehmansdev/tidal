@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useWork } from "../../services/workService";
+import Card from "../card";
 
 const getVisibleCount = () => {
   if (typeof window === "undefined") return 1;
@@ -87,10 +88,10 @@ const WorkSlider = () => {
             <a
               key={item.id}
               href={`/work/${item.id}`}
-              className="bg-white rounded-xl overflow-hidden shadow-md group cursor-pointer transition-transform duration-300 hover:scale-105 flex flex-col"
+              className=" rounded-xl overflow-hidden group cursor-pointer"
               style={{ textDecoration: "none" }}
             >
-              <div className="relative">
+              {/* <div className="relative">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -105,7 +106,13 @@ const WorkSlider = () => {
                   {item.title}
                 </h3>
                 <p className="text-sm text-[#33728a] mt-1">{item.category}</p>
-              </div>
+              </div> */}
+              <Card
+                image={item.image}
+                title={item.title}
+                category={item.category}
+                spanColor="bg-reddish-orange"
+              />
             </a>
           ))}
         </div>
