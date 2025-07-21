@@ -34,15 +34,17 @@ export default function WorkDetail({ id }: WorkDetailProps) {
   }
 
   return (
-    <div className="container mx-auto">
-      <h1 className="font-[Montserrat] text-4xl md:text-7xl font-bold text-dark-blue mb-2">
+    <div className="container mx-auto ">
+      <div className="flex flex-col gap-y-5">
+      <h1 className="font-[Montserrat] text-56 lg:text-76 text-dark-blue ">
         {work.title}
       </h1>
-      <p className="font-[Montserrat] text-4xl text-dark-blue mb-6 font-medium">
+      <p className="font-[Montserrat] text-22 lg:text-36 text-dark-blue mb-6">
         Creating A Powerful TV Ad For Their Campaign
         <br />
         ‘You Could Make A Difference’
       </p>
+      </div>
       <div className="w-full  overflow-hidden mb-8">
         <video
           src={work.video}

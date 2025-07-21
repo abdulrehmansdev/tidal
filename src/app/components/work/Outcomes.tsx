@@ -3,70 +3,70 @@ import Image from "next/image";
 
 const Outcomes = () => {
   return (
-    <section className="container mx-auto py-6 lg:py-12">
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between w-full">
-          <div className="flex-1 min-w-[260px] lg:max-w-[420px] lg:mr-8">
-            <h1 className="font-[Montserrat] leading-tight text-4xl md:text-6xl font-bold text-dark-blue leading-tight">
-              <span className="block border-b-8 border-reddish-orange pb-1 mb-2 inline-block w-fit">
-                The
-              </span>
-              <br />
-              <span className="block border-b-8 border-reddish-orange pb-1 mb-2 inline-block w-fit">
-                Outcome
-              </span>
-            </h1>
-          </div>
-          <div className="flex-1 lg:mt-0 mt-2">
-            <p className=" font-[Montserrat]  text-[#22305a] leading-tight text-base md:text-lg ">
-              An authentic film that highlights key moments in the foster
-              carer's journey. With a ROI of ...
-              <br />
-              <br />
-              Check out our behind the scenes film to see how we pulled it all
-              together!
-              <br />
-            </p>
-          </div>
+    <section className="container mx-auto my-16">
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
+        <div className="flex flex-col items-start w-fit">
+          <h3 className="font-[Montserrat] text-dark-blue text-56 lg:text-64 w-fit">
+            <span className="relative inline-block w-fit">
+              The
+              <span className="block md:hidden lg:block h-2 bg-reddish-orange w-full" />
+            </span> {" "}
+            <span className="inline lg:block">
+              Outcome{" "}
+              <span className="block h-2 bg-reddish-orange w-full" />
+            </span>
+          </h3>
         </div>
-        {/* Image Grid */}
-        <div className="grid grid-rows-1 md:grid-rows-2 gap-6">
-          <div className="flex gap-8">
-            <div
-              className="rounded-2xl overflow-hidden flex md:items-end"
-              style={{ flexBasis: "60%", minWidth: 0 }}
-            >
-              <Image
-                src="/work/outcome1.png"
-                alt="Outcome 1"
-                width={800}
-                height={400}
-                className="w-full h-64 md:h-80 lg:h-96 object-cover object-center rounded-2xl"
-              />
-            </div>
-            <div
-              className="flex md:items-end"
-              style={{ flexBasis: "40%", minWidth: 0 }}
-            >
-              <div className="rounded-2xl overflow-hidden w-full">
-                <Image
-                  src="/work/outcome2.png"
-                  alt="Outcome 2"
-                  width={800}
-                  height={400}
-                  className="w-full h-48 md:h-56 lg:h-64 object-cover object-center"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="rounded-2xl overflow-hidden">
+        <div className="flex flex-col gap-y-4 lg:w-4/6">
+          <p className=" font-[Montserrat] text-20 text-dark-blue ">
+            An authentic film that highlights key moments in the foster carer's
+            journey. With a ROI of ...
+          </p>
+          <p className=" font-[Montserrat] text-20 text-dark-blue">
+            Check out our behind the scenes film to see how we pulled it all
+            together!
+          </p>
+        </div>
+      </div>
+      {/* Image Grid */}
+      <div className="grid grid-rows-1 md:grid-rows-2 gap-4 md:gap-6 mt-8 md:mt-10 lg:mt-16">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-8">
+          <div
+            className="rounded-2xl overflow-hidden flex md:items-end w-full md:w-auto"
+            style={{ flexBasis: "60%", minWidth: 0 }}
+          >
             <Image
-              src="/work/outcome3.png"
-              alt="Outcome 3"
+              src="/work/outcome1.png"
+              alt="Outcome 1"
               width={800}
-              height={190}
-              className="w-full h-full object-cover"
+              height={400}
+              className="w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover object-center rounded-2xl"
             />
           </div>
+          <div
+            className="flex md:items-end w-full md:w-auto"
+            style={{ flexBasis: "40%", minWidth: 0 }}
+          >
+            <div className="rounded-2xl overflow-hidden w-full">
+              <Image
+                src="/work/outcome2.png"
+                alt="Outcome 2"
+                width={800}
+                height={400}
+                className="w-full h-36 sm:h-48 md:h-56 lg:h-64 object-cover object-center"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="rounded-2xl overflow-hidden w-full">
+          <Image
+            src="/work/outcome3.png"
+            alt="Outcome 3"
+            width={800}
+            height={190}
+            className="w-full h-36 sm:h-48 md:h-full object-cover"
+          />
+        </div>
       </div>
     </section>
   );

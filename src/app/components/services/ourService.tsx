@@ -6,11 +6,11 @@ export default function OurServices() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Text Content */}
           <div className="space-y-6">
-            <h2 className="font-[Montserrat] text-4xl sm:text-5xl lg:text-7xl font-bold text-dark-blue leading-tight">
+            <h2 className="font-[Montserrat] text-56 lg:text-76  text-dark-blue leading-tight">
               Our Services
             </h2>
 
-            <div className=" font-[Montserrat] leading-[100%] tracking-[-0.02em] text-dark-blue text-base md:text-xl sm:text-lg leading-relaxed">
+            <div className="font-[Montserrat] text-dark-blue text-20">
               <p>
                 Every project begins with a spark—your idea. Whether big or
                 small, // it's the foundation of your creative journey. At Tidal
@@ -23,7 +23,7 @@ export default function OurServices() {
 
             <div className="pt-4">
               <button
-                className="w-[198px] h-[44px] inline-flex items-center justify-center py-3 border-2 border-dark-blue hover:border-none text-dark-blue font-semibold text-sm tracking-wider uppercase hover:bg-reddish-orange hover:text-white transition-colors duration-300 rounded-full cursor-pointer"
+                className="btn-primary cursor-pointer  uppercase "
                 aria-label="Let's Talk"
               >
                 View All Services

@@ -24,17 +24,17 @@ const SelectAService = () => {
           >
             Select a Service
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-8 text-base font-medium w-full mb-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-8 gap-x-8 text-base font-medium w-full">
             {isLoading && <div>Loading...</div>}
             {error && (
-              <div className="text-[#ff4b5c]">
+              <div className="text-reddish-orange">
                 {typeof error === "string"
                   ? error
                   : "An error occurred while loading services. Please try again later."}
               </div>
             )}
             {!isLoading && !error && (!services || services.length === 0) && (
-              <div className="text-[#ff4b5c]">No services found.</div>
+              <div className="text-reddish-orange">No services found.</div>
             )}
             {services &&
               services.map((service) => (
@@ -51,10 +51,10 @@ const SelectAService = () => {
                   }}
                 >
                   <span
-                    className="absolute left-0 top-1/2 -translate-y-1/2 h-6 w-1 rounded bg-[#ff645a] opacity-0 group-hover:opacity-100 group-hover:h-7 transition-all duration-500"
+                    className="absolute left-0 top-1/2 -translate-y-1/2 h-6 w-1 rounded bg-reddish-orange opacity-0 group-hover:opacity-100 group-hover:h-7 transition-all duration-500"
                     aria-hidden="true"
                   />
-                  <span className="font-[Montserrat] pl-4 group-hover:text-darkest-blue text-22 transition-colors duration-300">
+                  <span className="font-[Montserrat] pl-4 text-dark-blue text-22 transition-colors duration-300">
                     {service.title}
                   </span>
                 </div>
