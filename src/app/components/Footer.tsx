@@ -1,6 +1,9 @@
 // export default Footer;
+import { Instagram } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { BsTwitterX } from "react-icons/bs";
+import { FaInstagram, FaLinkedin, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -21,30 +24,20 @@ export default function Footer() {
               Tidal Film is a video production company creating high-quality
               films for businesses, charities, and brands.
             </p>
-            <div className="flex gap-4 ">
+            <div className="flex items-center gap-4 ">
               <a
                 href="https://x.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image
-                  src="/social/x.svg"
-                  alt="X"
-                  width={24}
-                  height={24}
-                />
+               <BsTwitterX className="w-6 h-6" />
               </a>
               <a
                 href="https://instagram.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Image
-                  src="/social/insta.svg"
-                  alt="Instagram"
-                  width={24}
-                  height={24}
-                />
+                <FaInstagram className="w-7 h-7" />
               </a>
               <a
                 href="https://youtube.com/"
@@ -54,21 +47,17 @@ export default function Footer() {
                 <Image
                   src="/social/youtube.svg"
                   alt="YouTube"
-                  width={24}
-                  height={24}
+                  width={28}
+                  height={28}
                 />
               </a>
               <a
                 href="https://linkedin.com/"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="bg-sea-litest rounded-md p-1 flex items-center justify-center"
               >
-                <Image
-                  src="/social/linkedin.svg"
-                  alt="LinkedIn"
-                  width={24}
-                  height={24}
-                />
+               <FaLinkedinIn className="w-6 h-6 text-dark-blue" />
               </a>
             </div>
           </div>

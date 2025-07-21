@@ -16,7 +16,7 @@ const MoreContent = () => {
           </h2>
           <button
             onClick={() => router.push("/news")}
-            className="px-6 py-3 rounded-full border border-dark-blue text-dark-blue text-sm leading-snug font-semibold hover:bg-reddish-orange hover:text-white hover:border-reddish-orange transition cursor-pointer"
+            className="btn-primary uppercase cursor-pointer"
             aria-label="View All News"
           >
             VIEW ALL NEWS
