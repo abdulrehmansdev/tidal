@@ -36,14 +36,14 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ id }) => {
     <div className="container mx-auto py-6 lg:py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="space-y-6">
-            <h2 className="font-[montserrat] text-4xl sm:text-5xl lg:text-7xl font-extrabold mb-8 text-dark-blue leading-tight text-left">
+            <h2 className="font-[montserrat] text-56 lg:text-76 mb-8 text-dark-blue">
               {service.title}
             </h2>
-            <p className="md:w-9/10 font-[montserrat] space-y-4 text-slate-600 text-base sm:text-lg md:text-xl leading-relaxed text-dark-blue">
+            <p className="md:w-9/10 font-[montserrat] space-y-4 text-dark-blue text-20">
               {service.briefText}
             </p>
             <button
-              className="mt-2 w-fit px-6 py-2 border-2 border-dark-blue rounded-full text-dark-blue font-bold tracking-wide hover:bg-dark-blue hover:text-white transition-colors duration-200 text-base md:text-lg cursor-pointer"
+              className="mt-2 btn-primary uppercase cursor-pointer"
               aria-label="Let's Talk"
             >
               LET'S TALK

@@ -1,4 +1,5 @@
 "use client";
+import { Minus, MinusIcon, Plus } from "lucide-react";
 import React, { useState } from "react";
 
 const faqs = [
@@ -59,8 +60,8 @@ const FAQ = () => {
   return (
     <section className="container mx-auto py-8 lg:py-16 flex flex-col md:flex-row gap-8 mb-8">
       {/* Left: Heading */}
-      <div className="flex-1 min-w-[320px] flex items-start">
-        <h2 className="font-[montserrat] text-3xl md:text-6xl font-extrabold text-[#23456a] leading-tight">
+      <div className="flex-1  flex items-start">
+        <h2 className="font-[montserrat] text-36 lg:text-56 text-dark-blue">
           Frequently Asked
           <br />
           Questions
@@ -71,27 +72,20 @@ const FAQ = () => {
         {faqs.map((faq, idx) => (
           <div key={faq.question} className="border-b border-gray-300 py-4">
             <button
-              className="w-full flex justify-between items-center text-left text-[#23456a] font-semibold text-lg md:text-xl focus:outline-none cursor-pointer"
+              className="w-full flex justify-between items-center gap-x-6 text-left text-dark-blue text-20 lg:text-22 focus:outline-none cursor-pointer"
               aria-label={`Toggle FAQ: ${faq.question}`}
               onClick={() => setOpenIndex(idx === openIndex ? -1 : idx)}
             >
               <span>{faq.question}</span>
+              <span>
               {openIndex === idx ? (
-                <img
-                  src="/services/minus.svg"
-                  alt="Collapse"
-                  className="ml-4 w-6 h-6 transition-transform duration-200"
-                />
+                <MinusIcon className=" w-8 h-8 transition-transform duration-200 text-reddish-orange" />
               ) : (
-                <img
-                  src="/services/plus.svg"
-                  alt="Expand"
-                  className="ml-4 w-6 h-6 transition-transform duration-200"
-                />
-              )}
+                <Plus className=" w-8 h-8 transition-transform duration-200 text-reddish-orange" />
+              )}</span>
             </button>
             {openIndex === idx && (
-              <div className="mt-4 text-[#23456a] text-base md:text-lg animate-fade-in">
+              <div className="mt-4 text-dark-blue text-base md:text-lg animate-fade-in">
                 {faq.answer}
               </div>
             )}
