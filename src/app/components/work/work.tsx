@@ -77,8 +77,7 @@ export default function WorkPortfolio() {
   }
 
   return (
-    <div className="bg-[#f5f7ff] min-h-screen py-12 px-6 md:px-20 flex flex-col items-center">
-      <div className="w-full  mx-auto">
+    <div className="container mx-auto py-6 lg:py-12">
         {/* <div className="w-full flex justify-start"> */}
         <h1 className="text-4xl md:text-7xl font-bold text-[#1C4062] mb-8 text-left">
           Our Portfolio
@@ -125,16 +124,7 @@ export default function WorkPortfolio() {
               {row.map((item) => (
                 <div
                   key={item.id}
-                  className={`group rounded-xl overflow-hidden cursor-pointer w-full md:flex-1 ${
-                    row.length === 2
-                      ? 'min-w-[340px] max-w-[600px]'
-                      : 'min-w-[260px] max-w-[420px]'
-                  }`}
-                  style={
-                    row.length === 2
-                      ? { maxWidth: "660px" }
-                      : { maxWidth: "420px" }
-                  }
+                  className={`group rounded-xl overflow-hidden cursor-pointer w-full md:flex-1`}
                   onClick={() => router.push(`/work/${item.id}`)}
                   tabIndex={0}
                   role="button"
@@ -150,27 +140,11 @@ export default function WorkPortfolio() {
                     category={item.category}
                     spanColor="bg-reddish-orange"
                   />
-                  {/* <img
-                    src={item.image}
-                    alt={item.title}
-                    className={`w-full ${
-                      row.length === 2 ? "h-64" : "h-48"
-                    } object-cover object-center`}
-                  />
-                  <div className="p-5 flex-1 flex flex-col justify-between">
-                    <div>
-                      <h2 className="text-lg font-semibold text-[#1a2343] mb-1 truncate">
-                        {item.title}
-                      </h2>
-                      <p className="text-sm text-[#6b7280]">{item.category}</p>
-                    </div>
-                  </div> */}
                 </div>
               ))}
             </div>
           ))}
         </div>
-      </div>
     </div>
   );
 }
