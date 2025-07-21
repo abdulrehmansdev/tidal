@@ -94,7 +94,7 @@ export default function NewsPage() {
                         className="w-full object-cover rounded-2xl"
                       />
                       <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-                      <span className="absolute top-2 right-2 bg-reddish-orange text-offwhite text-xs font-normal text-offWhite px-2 py-1 rounded-full z-10 leading-tight">
+                      <span className="absolute top-2 right-2 bg-reddish-orange text-offwhite text-13 text-offWhite px-2 py-1 rounded-full z-10 leading-tight">
                         {item.category}ss
                       </span>
                     </div>

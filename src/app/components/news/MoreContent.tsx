@@ -9,26 +9,25 @@ const MoreContent = () => {
   const router = useRouter();
 
   return (
-    <div className="bg-[#f7f8fa] py-12 px-2 md:px-8 lg:px-16">
-      <div className="mx-auto">
+    <div className="container mx-auto py-6 lg:py-12">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#23456a]">
+          <h2 className="text-56 text-dark-blue">
             More Content
           </h2>
           <button
             onClick={() => router.push("/news")}
-            className="px-6 py-2 rounded-full border border-[#23456a] text-[#23456a] font-semibold text-sm tracking-wide hover:bg-[#23456a] hover:text-white transition cursor-pointer"
+            className="px-6 py-3 rounded-full border border-dark-blue text-dark-blue text-sm leading-snug font-semibold hover:bg-reddish-orange hover:text-white hover:border-reddish-orange transition cursor-pointer"
             aria-label="View All News"
           >
             VIEW ALL NEWS
           </button>
         </div>
         {isLoading ? (
-          <div className="text-center py-12 text-lg text-[#23456a]">
+          <div className="text-center py-12 text-lg text-dark-blue">
             Loading...
           </div>
         ) : error ? (
-          <div className="text-center py-12 text-lg text-red-600">
+          <div className="text-center py-12 text-lg text-reddish-orange">
             {typeof error === "string"
               ? error
               : "An error occurred while loading news. Please try again later."}
@@ -50,18 +49,18 @@ const MoreContent = () => {
                     className="w-full object-cover rounded-2xl"
                   />
                   <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-                  <span className="absolute top-3 right-3 bg-[#ff4b5c] text-white text-xs font-semibold px-4 py-1 rounded-full z-10">
+                  <span className="absolute top-3 right-3 bg-reddish-orange text-white text-13 px-4 py-1 rounded-full z-10">
                     {item.category}
                   </span>
                 </div>
-                <div className="p-5 flex flex-col flex-1 items-start text-left">
-                  <span className="text-xs text-[#23456a] mb-2">
+                <div className="p-5 flex flex-col flex-1 items-start text-left text-dark-blue">
+                  <span className="text-16 mb-2">
                     {item.date}
                   </span>
-                  <h3 className="text-lg font-bold text-[#23456a] mb-2 leading-snug">
+                  <h3 className="text-22 mb-6 leading-snug">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-[#23456a] opacity-80 mb-2 flex-1 truncate">
+                  <p className="text-20 opacity-80 mb-2 flex-1 line-clamp-2">
                     {item.description}
                   </p>
                 </div>
@@ -69,7 +68,6 @@ const MoreContent = () => {
             ))}
           </div>
         )}
-      </div>
     </div>
   );
 };

@@ -114,6 +114,7 @@ export default {
         "5.5xl": "56px",
         "6.5xl": "64px",
         "7.5xl": "76px",
+        "13px": "13px",
       },
       lineHeight: {
         "16": "64px",
