@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Creative() {
   return (
     <div className="container mx-auto mt-20">
-      <h2 className="font-[Montserrat] text-56 text-dark-blue mb-16">
+      <h2 className="font-[Montserrat] text-56 text-dark-blue mb-10">
         Our Creative Process
       </h2>
       <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10">

@@ -36,7 +36,7 @@ export default function WorkPortfolio() {
 
   if (isLoading) {
     return (
-      <div className="bg-[#f5f7ff] min-h-screen py-12 px-4 md:px-12 flex flex-col items-center">
+      <div className="bg-offwhite min-h-screen py-12 px-4 md:px-12 flex flex-col items-center">
         <div className="w-full max-w-7xl mx-auto text-center text-2xl text-gray-500 py-20">
           Loading portfolio...
         </div>
@@ -46,8 +46,8 @@ export default function WorkPortfolio() {
 
   if (isError) {
     return (
-      <div className="bg-[#f5f7ff] min-h-screen py-12 px-4 md:px-12 flex flex-col items-center">
-        <div className="w-full max-w-7xl mx-auto text-center text-2xl text-red-500 py-20">
+      <div className="bg-offwhite min-h-screen py-12 px-4 md:px-12 flex flex-col items-center">
+        <div className="w-full max-w-7xl mx-auto text-center text-2xl text-reddish-orange py-20">
           Failed to load portfolio. Please try again later.
         </div>
       </div>
@@ -77,17 +77,17 @@ export default function WorkPortfolio() {
   }
 
   return (
-    <div className="container mx-auto py-6 lg:py-12">
+    <div className="container mx-auto pt-10">
         {/* <div className="w-full flex justify-start"> */}
-        <h1 className="text-4xl md:text-7xl font-bold text-[#1C4062] mb-8 text-left">
+        <h1 className="text-56 lg:text-76 text-dark-blue ">
           Our Portfolio
         </h1>
         {/* </div> */}
         <div className="mb-8">
-          <div className="flex flex-col md:flex-row md:items-start text-[#1a2343] gap-4 justify-center flex-nowrap">
-            <span className="font-semibold text-lg mr-4 whitespace-nowrap md:mt-2">
-              Filter by <span className="text-[#FE5F55]">---</span>
-            </span>
+          <div className="flex flex-col md:flex-row md:items-start text-dark-blue gap-4 justify-center flex-nowrap mt-10">
+            <p className="text-22 text-dark-blue md:mt-2 w-60">
+              Filter by <span className="text-reddish-orange">---</span>
+            </p>
             {/* <input
               type="text"
               placeholder="Keyword..."
@@ -96,14 +96,14 @@ export default function WorkPortfolio() {
               className="px-4 py-2 rounded-full border border-[#dbeafe] focus:outline-none focus:ring-2 focus:ring-[#ff4d4f] text-base md:text-base bg-white text-[#1a2343] w-full md:w-64"
               style={{ maxWidth: 260 }}
             /> */}
-            <div className="flex flex-wrap gap-3 mt-3 md:mt-0 md:ml-4">
+            <div className="flex flex-wrap gap-3  ">
               {FILTERS.map((filter) => (
                 <button
                   key={filter}
-                  className={`px-5 py-2 rounded-full border font-medium transition-colors duration-200 text-sm md:text-base cursor-pointer ${
+                  className={`btn-primary transition duration-200 cursor-pointer ${
                     activeFilter === filter
-                      ? "bg-[#FE5F55] text-white border-[#FE5F55"
-                      : "bg-white text-[#1a2343] border-[#1a2343] hover:bg-[#e0e7ff]"
+                      ? "bg-reddish-dark text-white border-reddish-dark"
+                      : " "
                   }`}
                   aria-label={`Filter by ${filter}`}
                   onClick={() => setActiveFilter(filter)}

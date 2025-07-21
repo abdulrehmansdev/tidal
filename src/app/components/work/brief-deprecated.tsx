@@ -29,27 +29,28 @@ export default function PostProduction({ id }: WorkDetailProps) {
       </div>
     );
   return (
-    <div className="bg-[#f7f8fa] min-h-screen py-8 px-4 md:px-12 lg:px-32">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen ">
+      <div className="container mx-auto">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between">
           <div className="md:w-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#22305a] leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-dark-blue leading-tight">
               <span>The-</span>
               <br className="md:hidden" />
               <span>Brief</span>
             </h1>
-            <div className="w-20 h-1 bg-[#ff6b6b] mt-2 mb-6" />
+            <div className="w-20 h-1 bg-reddish-orange mt-2 mb-6" />
           </div>
           <div className="md:w-2/3 md:pl-8 mt-2 md:mt-0">
-            <p className="text-[#22305a] text-base md:text-lg leading-relaxed">
+            <p className="text-dark-blue text-base md:text-lg leading-relaxed">
               {work.briefText}
             </p>
           </div>
         </div>
+        
         <div className="mt-10 flex flex-col gap-6">
           {/* First row: 1st and 2nd images, 1st is larger */}
           <div className="flex gap-6">
-            <div className="flex-1 rounded-2xl border-2 border-[#e3e6ee] overflow-hidden">
+            <div className="flex-1 rounded-2xl border-2 border-offWhite overflow-hidden">
               <Image
                 src={work.brief1}
                 alt="Woman in field"
@@ -60,7 +61,7 @@ export default function PostProduction({ id }: WorkDetailProps) {
               />
             </div>
             <div className="flex md:items-end">
-              <div className=" rounded-2xl border-2 border-[#e3e6ee] overflow-hidden">
+              <div className=" rounded-2xl border-2 border-offWhite overflow-hidden">
                 <Image
                   src={work.brief2}
                   alt="Coffee cup"
@@ -75,7 +76,7 @@ export default function PostProduction({ id }: WorkDetailProps) {
           {/* Second row: 3rd and 4th images, 4th is larger */}
           <div className="flex gap-6">
             <div className="  flex  md:items-start">
-              <div className="rounded-2xl border-2 border-[#e3e6ee] overflow-hidden">
+              <div className="rounded-2xl border-2 border-offWhite overflow-hidden">
                 <Image
                   src={work.brief3}
                   alt="Surfer"
@@ -86,7 +87,7 @@ export default function PostProduction({ id }: WorkDetailProps) {
                 />
               </div>
             </div>
-            <div className="flex-1 rounded-2xl border-2 border-[#e3e6ee] overflow-hidden">
+            <div className="flex-1 rounded-2xl border-2 border-offWhite overflow-hidden">
               <Image
                 src={work.brief4}
                 alt="City street"

@@ -61,6 +61,7 @@ export default {
         "sea-litest": "#E6E9E4",
         "reddish-orange": "#FE5F55",
         "reddish-dark": "#b8463e",
+        "primary-border":"#D9D9D9",
 
         black: "#000000",
         white: "#FFFFFF",
