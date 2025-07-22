@@ -8,7 +8,7 @@ export const viewport = {
   initialScale: 1,
 };
 
-// export const metadata = {
+export const metadata = {
 //   title: {
 //     template: "%s", //| ' + process.env.NEXT_PUBLIC_SITE_NAME,
 //     default: "Tidal Film | " + process.env.NEXT_PUBLIC_SITE_NAME,
@@ -30,15 +30,15 @@ export const viewport = {
 //     },
 //   },
 //   // Add these favicon-related properties
-//   icons: {
-//     icon: [
-//       { url: "/favicon.ico" },
-//       { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
-//       { url: "/favicon/favicon.svg", type: "image/svg+xml" },
-//     ],
-//     shortcut: "/favicon.ico",
-//     apple: { url: "/favicon/apple-touch-icon.png", sizes: "180x180" },
-//   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      // { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      // { url: "/favicon/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: { url: "/favicon/apple-touch-icon.png", sizes: "180x180" },
+  },
 //   // Add important keywords
 //   keywords: [
 //     "tidal film",
@@ -158,7 +158,7 @@ export const viewport = {
 //   //     }
 //   //   }
 //   // }
-// };
+};
 
 export default function RootLayout({
   children,

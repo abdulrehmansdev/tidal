@@ -3,29 +3,7 @@ import Image from "next/image";
 export default function PostProduction() {
   return (
       <div className=" container mx-auto mt-20">
-        {/* <div className="flex flex-col md:flex-row md:items-start md:justify-between">
-          <div className="md:w-auto">
-            <h1 className="font-[Montserrat] text-4xl md:text-6xl font-bold text-[#22305a] leading-tight">
-              <span>Post-</span>
-              <div className="w-40 h-2 bg-[#ff6b6b]  " />
-              <br className="md:hidden" />
 
-              <span>Production</span>
-              <div className="w-full h-2 bg-[#ff6b6b] " />
-            </h1>
-        
-          </div>
-          
-          <div className="md:w-2/3 md:pl-8 mt-2 md:mt-4">
-            <p className=" font-[Montserrat]  text-[#22305a] leading-tight text-base md:text-lg leading-relaxed">
-              The final stage is where everything comes together. Editing is the
-              secret to impactful content—it's about structure, story, sound
-              design, and perfecting the final grade. We keep you involved every
-              step of the way with regular updates and review points, ensuring
-              the finished product exceeds your expectations.
-            </p>
-          </div>
-        </div> */}
 
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10">
           <div className="flex flex-col items-start w-fit">

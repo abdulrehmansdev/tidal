@@ -61,8 +61,8 @@ export default {
         "sea-litest": "#E6E9E4",
         "reddish-orange": "#FE5F55",
         "reddish-dark": "#b8463e",
-        "primary-border":"#D9D9D9",
-        "sea-lightest":"#E6E9E4",
+        "primary-border": "#D9D9D9",
+        "sea-lightest": "#E6E9E4",
 
         black: "#000000",
         white: "#FFFFFF",
@@ -127,7 +127,10 @@ export default {
         padding: {
           DEFAULT: "1.5rem",
           lg: "3rem",
-          '3xl':'0rem'
+          "3xl": "0rem",
+        },
+        screens: {
+          "2xl": "1440px",
         },
       },
       borderRadius: {
@@ -137,9 +140,9 @@ export default {
       borderWidth: {
         "1.5": "1.5px",
       },
-       height: {
-    400: "400px",
-  },
+      height: {
+        400: "400px",
+      },
     },
   },
   plugins: [],
