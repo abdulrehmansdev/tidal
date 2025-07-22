@@ -52,7 +52,7 @@ const AboutTidal = () => {
               muted
               playsInline
               width={650}
-              height={450}
+              height={430}
               className="w-full h-auto object-cover"
               style={{ borderRadius: "inherit" }}
               aria-label="Tidal Film crew working with professional camera equipment during a video production"

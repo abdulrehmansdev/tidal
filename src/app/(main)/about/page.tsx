@@ -10,7 +10,7 @@ import WorkSlider from "../../components/services/WorkSlider";
 
 export default function Home() {
   return (
-    <div className="bg-[#f6f6fd]">
+    <div>
       <AboutTidal />
       <Slideshow />
       <Creative />

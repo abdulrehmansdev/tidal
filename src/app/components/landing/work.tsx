@@ -59,7 +59,7 @@ const WorkShowcase = () => {
       </div>
 
       {/* Custom Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-x-6 gap-y-10">
         {/* Row 1 - 2 items spanning 3 cols each */}
         {topWorks.slice(0, 2).map((item) => (
           <div

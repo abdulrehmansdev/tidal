@@ -10,13 +10,13 @@ export default function Brief() {
           </h3> */}
           <h3 className="font-[Montserrat] text-dark-blue text-56 lg:text-64 w-fit">
             <span className="relative inline-block w-fit">
-            The 
+            The Brief
               <span className=" md:hidden lg:block  h-2 bg-reddish-orange w-full" />
-            </span>{" "}
-            <span className="inline lg:block">
-            Brief{" "}
-              <span className="block h-2 bg-reddish-orange w-full" />
             </span>
+            {/* <span className="inline lg:block">
+            {" "}
+              <span className="block h-2 bg-reddish-orange w-full" />
+            </span> */}
           </h3>
          
         </div>

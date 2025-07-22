@@ -45,7 +45,7 @@ const TestimonialsSlider = () => {
   // Duplicate testimonials for perfect loop if needed
   let displayTestimonials = testimonials;
   const slidesPerView = getSlidesPerView();
-  const minSlides = Math.ceil(slidesPerView * 2 + 1); // enough for loop and center
+  const minSlides = Math.ceil(slidesPerView * 2 ); // enough for loop and center
   if (testimonials.length > 0 && testimonials.length < minSlides) {
     const times = Math.ceil(minSlides / testimonials.length);
     displayTestimonials = Array(times)
@@ -126,26 +126,26 @@ const TestimonialsSlider = () => {
         }}
         centeredSlides={true}
         spaceBetween={30}
-        slidesPerView={1.2}
+        slidesPerView={2.2}
         loop={true}
         initialSlide={initialSlide}
         breakpoints={{
           768: {
             slidesPerView: 2.2,
             spaceBetween: 40,
-            centeredSlides: true,
+            centeredSlides: false,
           },
           1024: {
-            slidesPerView: 3.2,
+            slidesPerView: 2.2,
             spaceBetween: 50,
-            centeredSlides: true,
+            centeredSlides: false,
           },
         }}
         className="!overflow-visible"
       >
         {displayTestimonials.map((item, idx) => (
           <SwiperSlide key={item.id + "-" + idx} className="pt-12">
-            <div className="bg-teal text-offwhite rounded-xl font-medium text-2xl p-12 min-h-[280px] flex flex-col gap-y-5 justify-between">
+            <div className="bg-teal text-offwhite rounded-xl font-medium text-2xl p-12 min-h-400 flex flex-col gap-y-5 justify-between">
               {/* Quote Icon */}
               <div>
                 <Image

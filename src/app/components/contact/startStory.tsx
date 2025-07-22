@@ -7,8 +7,8 @@ const StartStory = () => {
     <div className=" container mx-auto mt-10">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         {/* Text Content */}
-        <div className="space-y-8">
-          <h2 className="font-[montserrat] text-dark-blue text-56 lg:text-76">
+        <div className="space-y-8 ">
+          <h2 className="font-[montserrat] text-dark-blue text-56 lg:text-76 lg:w-4/5">
             Start Your Story With Us
           </h2>
           <p className="font-[montserrat] text-dark-blue text-20">

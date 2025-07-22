@@ -39,11 +39,11 @@ export default function NewsPage() {
 
   return (
     <>
-        <div className="container mx-auto mt-20">
+        <div className="container mx-auto mt-20 mb-10">
           <h1 className="font-[montserrat] text-76 text-dark-blue">
             Our Latest News
           </h1>
-          <div className="flex flex-wrap gap-2 items-center my-10">
+          <div className="flex flex-wrap gap-2 items-center mt-12 mb-20">
             <span className="text-dark-blue font-medium mr-2">
               Filter by <span className="text-reddish-orange">---</span>
             </span>
@@ -121,7 +121,7 @@ export default function NewsPage() {
                       onClick={() => handlePageChange(idx + 1)}
                       className={`w-10 h-10 rounded-lg border border-dark-blue flex items-center justify-center text-dark-blue font-semibold text-base transition-all duration-200 ${
                         currentPage === idx + 1
-                          ? "bg-[#e6eae6] text-dark-blue border-[#e6eae6]"
+                          ? "bg-sea-lightest text-dark-blue border-sea-lightest"
                           : "bg-white hover:bg-dark-blue hover:text-white"
                       }`}
                       aria-label={`Go to page ${idx + 1}`}
@@ -135,7 +135,7 @@ export default function NewsPage() {
                     className={`w-10 h-10 rounded-lg flex items-center justify-center text-white font-semibold text-base transition-all duration-200 ${
                       currentPage === totalPages
                         ? "bg-dark-blue/30 cursor-not-allowed"
-                        : "bg-dark-blue hover:bg-[#1a2343]"
+                        : "bg-dark-blue hover:bg-darkest-blue"
                     }`}
                     aria-label="Next page"
                   >

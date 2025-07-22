@@ -84,23 +84,15 @@ export default function WorkPortfolio() {
         </h1>
         {/* </div> */}
         <div className="mb-8">
-          <div className="flex flex-col md:flex-row md:items-start text-dark-blue gap-4 justify-center flex-nowrap mt-10">
-            <p className="text-22 text-dark-blue md:mt-2 w-60">
+          <div className="flex flex-col md:flex-row md:items-start text-dark-blue gap-4 justify-center flex-nowrap mb-20 mt-14">
+            <p className="text-22 text-dark-blue md:mt-2 min-w-36">
               Filter by <span className="text-reddish-orange">---</span>
             </p>
-            {/* <input
-              type="text"
-              placeholder="Keyword..."
-              value={keyword}
-              onChange={(e) => setKeyword(e.target.value)}
-              className="px-4 py-2 rounded-full border border-[#dbeafe] focus:outline-none focus:ring-2 focus:ring-[#ff4d4f] text-base md:text-base bg-white text-[#1a2343] w-full md:w-64"
-              style={{ maxWidth: 260 }}
-            /> */}
-            <div className="flex flex-wrap gap-3  ">
+            <div className="flex flex-wrap gap-4">
               {FILTERS.map((filter) => (
                 <button
                   key={filter}
-                  className={`btn-primary transition duration-200 cursor-pointer ${
+                  className={`btn-primary transition duration-200 cursor-pointer uppercase ${
                     activeFilter === filter
                       ? "bg-reddish-dark text-white border-reddish-dark"
                       : " "
@@ -115,7 +107,7 @@ export default function WorkPortfolio() {
           </div>
         </div>
         {/* Responsive 2-3-2-3 pattern, 1 per row on small screens */}
-        <div className="flex flex-col gap-8 items-center w-full">
+        <div className="flex flex-col gap-10 items-center w-full ">
           {rows.map((row, rowIdx) => (
             <div
               key={rowIdx}

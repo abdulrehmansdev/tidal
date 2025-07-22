@@ -15,7 +15,7 @@ const SelectAService = () => {
     >
       <div className="flex justify-center items-center w-full">
         <div
-          className="bg-offWhite p-8 md:p-12 rounded-xl shadow-lg flex flex-col justify-center items-center w-full max-w-3xl"
+          className="bg-offWhite p-8 md:p-12 rounded-xl shadow-lg flex flex-col justify-center items-center w-full gap-y-3 max-w-3xl"
           style={{ minWidth: "320px" }}
         >
           <h3

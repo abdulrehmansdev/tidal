@@ -36,7 +36,7 @@ const WorkSlider = ({ visibleCount = 2 }: WorkSliderProps) => {
   return (
     <div className="container mx-auto py-6 lg:py-12">
       <div className="">
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex items-center justify-between mb-8">
           <h2 className="font-[Montserrat] text-3xl md:text-6xl font-semibold text-dark-blue">
             Our Work
           </h2>

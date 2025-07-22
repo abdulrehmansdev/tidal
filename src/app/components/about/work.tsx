@@ -7,7 +7,7 @@ const WorkShowcase = () => {
 
   if (isLoading) {
     return (
-      <section className="bg-[#f6f6fd] px-6 py-16">
+      <section className="bg-dark-blue px-6 py-16">
         <div className="max-w-5/6 mx-auto text-center">
           <div className="text-[#225f71]">Loading work items...</div>
         </div>
@@ -17,7 +17,7 @@ const WorkShowcase = () => {
 
   if (error) {
     return (
-      <section className="bg-[#f6f6fd] px-6 py-16">
+      <section className="bg-dark-blue px-6 py-16">
         <div className="max-w-5/6 mx-auto text-center">
           <div className="text-[#ff4b5c]">
             {typeof error === "string"
@@ -31,7 +31,7 @@ const WorkShowcase = () => {
 
   if (!workData) {
     return (
-      <section className="bg-[#f6f6fd] px-6 py-16">
+      <section className="bg-dark-blue px-6 py-16">
         <div className="max-w-5/6 mx-auto text-center">
           <div className="text-[#ff4b5c]">No work items found.</div>
         </div>
@@ -39,7 +39,7 @@ const WorkShowcase = () => {
     );
   }
   return (
-    <section className="bg-[#f6f6fd] px-6  py-16">
+    <section className="bg-dark-blue px-6  py-16">
       <div className="max-w-5/6 mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">

@@ -39,13 +39,13 @@ export default function WorkDetail({ id }: WorkDetailProps) {
       <h1 className="font-[Montserrat] text-56 lg:text-76 text-dark-blue ">
         {work.title}
       </h1>
-      <p className="font-[Montserrat] text-22 lg:text-36 text-dark-blue mb-6">
+      <p className="font-[Montserrat] text-22 lg:text-36 text-dark-blue">
         Creating A Powerful TV Ad For Their Campaign
         <br />
         ‘You Could Make A Difference’
       </p>
       </div>
-      <div className="w-full  overflow-hidden mb-8">
+      <div className="w-full  overflow-hidden my-10">
         <video
           src={work.video}
           controls

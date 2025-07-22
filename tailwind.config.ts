@@ -62,6 +62,7 @@ export default {
         "reddish-orange": "#FE5F55",
         "reddish-dark": "#b8463e",
         "primary-border":"#D9D9D9",
+        "sea-lightest":"#E6E9E4",
 
         black: "#000000",
         white: "#FFFFFF",
@@ -128,7 +129,6 @@ export default {
           lg: "3rem",
           '3xl':'0rem'
         },
-
       },
       borderRadius: {
         "26": "26px",
@@ -137,6 +137,9 @@ export default {
       borderWidth: {
         "1.5": "1.5px",
       },
+       height: {
+    400: "400px",
+  },
     },
   },
   plugins: [],
